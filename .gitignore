@@ -1,0 +1,10 @@
+# sistema
+.DS_Store
+
+# ferramentas locais (editor, previews)
+.claude/
+
+# artefatos de trabalho do design (prints de revisão, página de decisão)
+.impeccable/review/
+.impeccable/decision/
+.impeccable/questions/

@@ -1,0 +1,713 @@
+/* Espaço Daphine Santana — O Traço do Movimento */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pinho:#123F2E; --pinho-deep:#0C2F22; --pinho-soft:#1C4D39;
+  --folha:#286F47; --lima:#C9E46A;
+  --nevoa:#F1F5EF; --branco:#FBFCFA; --menta:#DDEBDD;
+  --ink:#10241B; --body:#2C3F35; --muted:#4A6155;
+  --on-pinho:#EEF4EC; --on-pinho-muted:#B7CDBE;
+  --line:#CFDCCF; --line-dark:rgba(201,228,106,.22);
+  --lima-h:#D7EE84; --pinho-h:#1C4D39;
+  --display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;
+  --sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif;
+  --maxw:1240px; --pad:clamp(20px,5vw,48px);
+  --sec:clamp(88px,11vw,168px);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --r:22px;
+}
+html{-webkit-text-size-adjust:100%;scrollbar-color:var(--folha) var(--nevoa);overflow-x:clip}
+/* smooth in-page jumps only once the line (and the pinned gallery's height) is built, so a deep link
+   (#duvidas) lands on its section instead of gliding to where it was before the page grew */
+@media (prefers-reduced-motion:no-preference){html.is-ready{scroll-behavior:smooth}}
+/* no sideways scroll on any device: clip at the page, at main and at every section the line runs through.
+   clip (unlike hidden) creates no scroll container, so sticky headings keep working */
+main,[data-trace]{overflow-x:clip}
+@supports not (overflow:clip){html,body{overflow-x:hidden}main,[data-trace]{overflow-x:hidden}}
+body{font-family:var(--sans);font-size:1.0625rem;line-height:1.62;color:var(--body);background:var(--nevoa);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip;overflow-wrap:break-word}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1.5px}
+ol,ul{list-style:none}
+::selection{background:var(--lima);color:var(--pinho)}
+:focus-visible{outline:3px solid var(--folha);outline-offset:3px;border-radius:8px}
+.field-pinho :focus-visible,.footer :focus-visible,.site-header :focus-visible{outline-color:var(--lima)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.nowrap{white-space:nowrap}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--lima);color:var(--pinho);
+  padding:12px 20px;border-radius:0 0 12px 0;font-weight:700;text-decoration:none}
+.skip:focus{left:0}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+.icon{width:1em;height:1em;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* fields */
+.field-pinho{background:var(--pinho);color:var(--on-pinho)}
+.field-nevoa{background:var(--nevoa)}
+.field-branco{background:var(--branco)}
+.field-menta{background:var(--menta)}
+.section{padding-block:var(--sec)}
+section[id]{scroll-margin-top:72px}
+[data-trace]{position:relative}
+[data-trace]>.wrap,[data-trace]>.strip-wrap,.espaco-stage{position:relative;z-index:1}
+
+/* type */
+h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:700;font-variation-settings:"wdth" 92;
+  letter-spacing:-.015em;line-height:1.02;text-wrap:balance}
+.field-pinho h1,.field-pinho h2,.field-pinho h3{color:var(--on-pinho)}
+.display-xl{font-size:clamp(2.6rem,1.2rem + 5vw,5.4rem);letter-spacing:-.02em;line-height:.98}
+.display-lg{font-size:clamp(2.1rem,1.3rem + 3vw,3.9rem);letter-spacing:-.016em}
+.hl{color:var(--folha)}
+.field-pinho .hl{color:var(--lima)}
+.lead{font-size:clamp(1.08rem,1rem + .35vw,1.25rem);line-height:1.55;color:var(--muted);max-width:56ch}
+.lead.on-dark{color:var(--on-pinho-muted)}
+.center{text-align:center;margin-inline:auto}
+.measure p{max-width:60ch}
+p,.lead,.quote footer,.faq-a{text-wrap:pretty}
+.sinais-list li,.faq summary,.spec-for{text-wrap:balance}
+p strong{color:var(--ink);font-weight:700}
+.field-pinho p strong{color:var(--on-pinho)}
+
+/* buttons — the WhatsApp action always inverts its ground: pinho on light, lima on pinho */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;font-family:var(--sans);font-weight:700;
+  font-size:1.02rem;line-height:1;min-height:54px;padding:17px 26px;border-radius:999px;text-decoration:none;cursor:pointer;
+  transition:transform .35s var(--ease),background-color .2s ease,box-shadow .35s var(--ease)}
+.btn .icon{width:1.25em;height:1.25em}
+.btn-action{background:var(--pinho);color:var(--on-pinho);box-shadow:0 10px 24px -14px rgba(8,30,21,.55)}
+.btn-action .icon{color:var(--lima)}
+.btn-action:hover{background:var(--pinho-h);transform:translateY(-2px);box-shadow:0 18px 34px -16px rgba(8,30,21,.6)}
+:is(.field-pinho,.site-header) .btn-action{background:var(--lima);color:var(--pinho);box-shadow:0 12px 26px -14px rgba(0,0,0,.6)}
+:is(.field-pinho,.site-header) .btn-action .icon{color:var(--pinho)}
+:is(.field-pinho,.site-header) .btn-action:hover{background:var(--lima-h)}
+.btn-action:active{transform:translateY(0)}
+.btn-sm{min-height:44px;padding:12px 18px;font-size:.95rem}
+.btn-lg{min-height:62px;padding:20px 32px;font-size:1.1rem}
+.link-quiet{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--on-pinho);text-decoration:underline;
+  text-decoration-color:rgba(201,228,106,.5);padding:12px 4px}
+.link-quiet:hover{text-decoration-color:var(--lima)}
+.link-strong{display:inline-flex;align-items:center;gap:9px;font-weight:700;color:var(--folha);text-decoration:underline;
+  text-decoration-color:rgba(40,111,71,.35);padding:10px 0}
+.link-strong:hover{text-decoration-color:currentColor}
+.link-strong .icon{width:1.15em;height:1.15em}
+
+/* header */
+.site-header{position:fixed;inset:0 0 auto;z-index:90;color:var(--on-pinho);
+  transition:background-color .3s ease,box-shadow .3s ease}
+.site-header.is-solid{background:rgba(18,63,46,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 var(--line-dark)}
+.header-inner{display:flex;align-items:center;gap:20px;min-height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.brand-logo{width:34px;height:auto}
+.brand-name{display:block;white-space:nowrap;font-family:var(--display);font-weight:700;font-size:1.22rem;letter-spacing:-.02em;line-height:1.1;
+  font-variation-settings:"wdth" 88}
+.brand-sub{display:block;font-size:.74rem;color:var(--on-pinho-muted);letter-spacing:.01em}
+.nav{display:flex;gap:2px}
+.nav a{font-size:.95rem;font-weight:600;text-decoration:none;padding:10px 12px;border-radius:10px;color:var(--on-pinho);
+  transition:color .2s ease,background-color .2s ease}
+.nav a:hover{color:var(--lima)}
+.site-header .btn{flex-shrink:0}
+
+/* trace */
+svg.trace{position:absolute;left:0;top:0;pointer-events:none;overflow:visible;z-index:0}
+svg.trace.front{z-index:3}
+.trace path.ln{fill:none;stroke:var(--folha);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.field-pinho .trace path.ln{stroke:var(--lima)}
+.trace path.ghost{fill:none;stroke:var(--lima);stroke-width:1.6;stroke-linecap:round}
+/* the trail: the route ahead, dotted and quiet; the stroke fills it as you scroll */
+.trace path.trail{fill:none;stroke:var(--folha);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:0 10;opacity:.32}
+.field-pinho .trace path.trail{stroke:var(--lima);opacity:.3}
+@media (prefers-reduced-motion:reduce){.trace path.trail{display:none}}
+.trace .pen{fill:var(--folha)}
+.field-pinho .trace .pen{fill:var(--lima)}
+.trace text{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.01em;fill:var(--folha);
+  font-variation-settings:"wdth" 80;opacity:0;transition:opacity .6s ease}
+.field-pinho .trace text{fill:var(--lima)}
+.trace text.on{opacity:1}
+.pt,.pt-static{position:absolute;width:0;height:0;pointer-events:none}
+.zone{position:absolute;pointer-events:none;visibility:hidden}
+.pt-static{position:relative;display:block}
+
+/* hero */
+.hero{min-height:100svh;padding-top:72px;display:flex;overflow:hidden}
+/* portrait sections sit on a hand-painted studio canvas in pinho, lit from behind the sitter */
+.studio{background-color:var(--pinho);
+  background-image:
+    radial-gradient(ellipse 34% 9% at var(--sx,72%) 100%, rgba(3,16,11,.55), transparent 72%),
+    radial-gradient(ellipse 42% 52% at var(--sx,72%) var(--sy,40%), rgba(120,190,150,.16), transparent 70%),
+    radial-gradient(ellipse 130% 95% at var(--sx,72%) 45%, transparent 52%, rgba(5,22,15,.62) 100%),
+    var(--canvas,url(../img/fundo-estudio-a.webp));
+  background-size:auto,auto,auto,cover;background-position:center;background-repeat:no-repeat}
+.final.studio{--canvas:url(../img/fundo-estudio-b.webp);--sx:74%;--sy:52%}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,4vw,64px);align-items:end;width:100%}
+.hero-copy{align-self:center;padding-block:clamp(40px,7vh,96px) calc(clamp(40px,7vh,96px) + 24px);position:relative;z-index:2}
+.hero h1{max-width:6.5em}
+.hero-lead{margin-top:28px;max-width:29.8em;font-size:clamp(1.06rem,.98rem + .35vw,1.22rem);color:var(--on-pinho-muted)}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:34px}
+.origin{position:absolute;left:-2px;bottom:clamp(8px,3vh,40px);width:12px;height:12px;border-radius:50%;background:var(--lima)}
+.hero-figure{position:relative;align-self:end;height:min(86svh,880px);display:flex;justify-content:center;z-index:2}
+.hero-figure img{height:100%;width:auto;max-width:none;object-fit:contain;object-position:bottom;
+  filter:drop-shadow(0 30px 40px rgba(0,0,0,.28))}
+
+/* sinais */
+.sinais-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,6vw,96px);align-items:start}
+.sinais-head .lead{margin-top:22px}
+.sinais-photo{margin-top:clamp(32px,4vw,52px)}
+.sinais-photo img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:var(--r);box-shadow:0 30px 60px -36px rgba(16,36,27,.5)}
+.sinais-list{display:flex;flex-direction:column;padding-left:56px}
+/* wide screens: the column gap is wide enough to carry the ticks, so the list keeps the column's edge */
+@media (min-width:1181px){.sinais-list{padding-left:0}.sinais-list .tick{left:calc(clamp(40px,6vw,96px) / -2)}}
+.sinais-list li{display:flex;align-items:center;gap:18px}
+.si-ic{width:38px;height:38px;flex-shrink:0;color:var(--folha);stroke-width:1.6}
+.sinais-list li{position:relative;font-family:var(--display);font-weight:500;font-variation-settings:"wdth" 92;
+  font-size:clamp(1.35rem,1.1rem + 1vw,1.9rem);line-height:1.3;letter-spacing:-.015em;color:var(--ink);
+  padding-block:clamp(18px,2.4vw,28px);border-bottom:1px solid var(--line)}
+.sinais-list li:first-child{border-top:1px solid var(--line)}
+.tick{position:absolute;left:-56px;top:50%;width:22px;height:3px;border-radius:3px;background:var(--folha);
+  transform:translate(-11px,-50%) scaleX(0);transition:transform .5s var(--ease)}
+.tick.is-reached{transform:translate(-11px,-50%) scaleX(1)}
+.quote-row{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px 48px;
+  margin-top:clamp(64px,8vw,112px)}
+.quote{flex:1 1 440px;max-width:720px}
+.quote p{font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 90;font-size:clamp(1.5rem,1.2rem + 1.2vw,2.2rem);
+  line-height:1.3;letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
+.quote footer{margin-top:14px;color:var(--muted)}
+
+/* o que é */
+.oque-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,7vw,112px);align-items:center}
+.oque-photo{position:relative}
+.oque-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);
+  box-shadow:0 30px 60px -36px rgba(16,36,27,.55)}
+.oque-copy h2{margin-bottom:28px}
+.oque-copy p+p{margin-top:16px}
+.words-runway{position:relative;height:110px;margin-top:22px}
+
+/* passos */
+#comecar .lead{margin-top:18px}
+.steps-wrap{position:relative;margin-top:clamp(56px,7vw,96px)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,64px)}
+.step{text-align:center;display:flex;flex-direction:column;align-items:center}
+.node{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--pinho);
+  border:2px solid rgba(201,228,106,.35);font-family:var(--display);font-weight:700;font-size:1.5rem;color:var(--on-pinho);
+  transition:background-color .5s var(--ease),color .5s var(--ease),border-color .5s var(--ease),transform .5s var(--ease)}
+.node.is-reached{background:var(--lima);color:var(--pinho);border-color:var(--lima);transform:scale(1.06)}
+.step h3{font-size:clamp(1.35rem,1.15rem + .6vw,1.65rem);margin:26px 0 10px}
+.step p{color:var(--on-pinho-muted);max-width:32ch}
+.steps-cta{margin-top:clamp(48px,6vw,80px);width:max-content}
+
+/* especialidades */
+.spec-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px 64px;align-items:end}
+.spec-list{margin-top:clamp(48px,6vw,80px);border-top:2px solid var(--ink)}
+.spec{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) minmax(12.5rem,.42fr);gap:10px 40px;
+  align-items:baseline;padding-block:clamp(22px,2.6vw,32px);border-bottom:1px solid var(--line);
+  transition:background-color .3s ease}
+.spec h3{display:flex;align-items:center;gap:14px;font-size:clamp(1.4rem,1.15rem + .9vw,2.05rem);letter-spacing:-.02em}
+.sp-ic{width:40px;height:40px;flex-shrink:0;color:var(--folha);stroke-width:1.5}
+/* columns share a baseline: the name sets it (the icon hangs beside it), not the icon's bottom edge */
+@media (min-width:761px){
+  .spec h3{display:block;position:relative;padding-left:54px}
+  .spec h3 .sp-ic{position:absolute;left:0;top:50%;translate:0 -50%}
+}
+.spec-title{display:flex;flex-direction:column;gap:8px}
+/* a marker in the language of the route: a ring like the city stops, then a short note */
+.spec-mark{display:flex;align-items:center;gap:9px;margin-left:54px;font-size:.84rem;font-weight:700;color:var(--folha)}
+.spec-mark::before{content:"";width:10px;height:10px;flex-shrink:0;border-radius:50%;border:2.5px solid var(--folha)}
+.spec p{color:var(--muted);max-width:52ch}
+.spec-for{font-size:.9rem;font-weight:700;color:var(--folha);text-align:right}
+.spec-tick{position:absolute;right:calc(var(--pad) * -.6 - 11px);bottom:-1.5px;width:22px;height:3px;border-radius:3px;
+  background:var(--folha);transform:scaleX(0);transition:transform .5s var(--ease)}
+.spec-tick.is-reached{transform:scaleX(1)}
+.spec-help{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px;margin-top:40px}
+.spec-help p{font-size:1.12rem;max-width:52ch}
+
+/* sobre */
+.sobre{overflow:hidden;padding-bottom:0}
+.sobre-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,6vw,96px);align-items:end}
+.sobre-copy{padding-bottom:var(--sec)}
+/* the figure bleeds off the right edge, so the photo's frame cut never shows */
+.sobre-figure{position:relative;align-self:end;justify-self:end;width:min(540px,calc(100% + (100vw - min(100vw,var(--maxw))) / 2 + var(--pad)));
+  margin-right:calc((min(100vw,var(--maxw)) - 100vw) / 2 - var(--pad));margin-bottom:-20%}
+.sobre-figure img{width:100%}
+@media (min-width:1700px){
+  .sobre-figure{width:min(580px,calc(100% + 96px));margin-right:-96px}
+  .sobre-figure img{-webkit-mask-image:linear-gradient(to left,transparent 0,#000 72px);mask-image:linear-gradient(to left,transparent 0,#000 72px)}
+}
+.display-name{font-size:clamp(2.8rem,1.4rem + 5vw,5.4rem);letter-spacing:-.022em;line-height:.95}
+.sobre-role{margin:16px 0 30px;font-weight:700;color:var(--folha)}
+.sobre-copy>p+p{margin-top:16px}
+.diffs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 36px;margin:40px 0 32px;
+  padding-top:32px;border-top:1px solid rgba(16,36,27,.16)}
+.diffs dt{font-family:var(--display);font-weight:700;font-size:1.22rem;color:var(--ink);letter-spacing:-.015em;
+  font-variation-settings:"wdth" 90;margin-bottom:6px}
+.diffs dd{font-size:.98rem;color:var(--muted)}
+.coopmed{margin-bottom:28px;font-size:.98rem;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,.55);display:inline-block}
+
+/* depoimentos: real Google reviews, quoted verbatim, on a pinho interlude */
+.dep-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,6vw,96px);align-items:start}
+.dep-head{position:sticky;top:120px}
+.dep-rating{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;margin:26px 0 6px;font-weight:700;color:var(--on-pinho)}
+.stars{display:inline-flex;gap:3px;color:var(--lima)}
+.star{width:18px;height:18px;fill:currentColor}
+.dep-list{display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)}
+.testimonial{padding-top:clamp(28px,3vw,40px);border-top:1px solid var(--line-dark)}
+.testimonial:first-child{padding-top:0;border-top:0}
+.testimonial blockquote{margin:16px 0 18px}
+.testimonial blockquote p{font-family:var(--display);font-weight:500;font-variation-settings:"wdth" 92;
+  font-size:clamp(1.45rem,1.15rem + 1.1vw,2.15rem);line-height:1.28;letter-spacing:-.015em;color:var(--on-pinho);text-wrap:pretty;max-width:34ch}
+.testimonial figcaption{font-weight:700;color:var(--lima)}
+.testimonial figcaption span{font-weight:400;color:var(--on-pinho-muted)}
+
+/* espaço */
+.espaco-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px 64px;align-items:end}
+.strip-wrap{--gap:clamp(56px,6vw,80px);margin-top:var(--gap);position:relative}
+.strip{display:flex;gap:18px;overflow-x:auto;scroll-padding-inline:var(--pad);
+  padding:0 var(--pad) 18px;scrollbar-width:thin;scrollbar-color:var(--folha) transparent}
+@media (min-width:1240px){.strip{padding-inline:calc((100vw - var(--maxw))/2 + var(--pad));scroll-padding-inline:calc((100vw - var(--maxw))/2 + var(--pad))}}
+@media (pointer:coarse){.strip{scroll-snap-type:x mandatory}}
+.frame{flex:0 0 clamp(240px,24vw,320px);scroll-snap-align:start}
+.frame img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px}
+/* captions are part of the film: the line passes behind them like behind the photos */
+.frame-cap{display:block;padding-top:12px;font-weight:700;color:var(--ink);background:var(--nevoa)}
+.espaco-pin{position:relative}
+/* pinned gallery: the stage sticks under the header while vertical scroll slides the photos sideways,
+   then releases. trace.js sets the sizes; without JS or with reduced motion the strip simply scrolls sideways */
+#espaco.is-pinned .espaco-pin{height:var(--pin-h)}
+#espaco.is-pinned .espaco-stage{position:sticky;top:var(--stage-top,72px);padding-bottom:16px}
+#espaco.is-pinned .strip-wrap{margin-top:clamp(24px,4vh,56px)}
+#espaco.is-pinned .strip{overflow:visible;scroll-snap-type:none;will-change:transform;padding-bottom:0}
+#espaco.is-pinned .frame{flex-basis:var(--frame-w)}
+.insta-row{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;margin-top:40px}
+.insta-row p{max-width:56ch;color:var(--muted)}
+
+/* dúvidas */
+.faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,6vw,96px);align-items:start}
+.faq-head{position:sticky;top:120px}
+.faq-list{position:relative;border-top:2px solid var(--ink)}
+.faq{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:24px 0;font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 92;font-size:clamp(1.15rem,1.05rem + .4vw,1.35rem);
+  color:var(--ink);letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--folha)}
+.faq-icon{display:grid;place-items:center;width:36px;height:36px;flex-shrink:0;border-radius:50%;border:2px solid var(--folha);
+  color:var(--folha);transition:transform .45s var(--ease),background-color .3s ease,color .3s ease}
+.faq-icon .icon{width:18px;height:18px;stroke-width:2.2}
+.faq[open] .faq-icon{transform:rotate(135deg);background:var(--folha);color:var(--branco)}
+.faq-a{padding:0 56px 26px 0;color:var(--muted);max-width:62ch;overflow:hidden}
+.faq.is-closing .faq-icon{transform:none;background:transparent;color:var(--folha)}
+/* while an answer opens or closes, the line in this section steps back and returns on its new path */
+#duvidas svg.trace{transition:opacity .3s ease}
+#duvidas.faq-moving svg.trace{opacity:0;transition-duration:.06s}
+
+/* onde */
+.onde-title{max-width:18ch}
+.onde-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(32px,5vw,80px);margin-top:clamp(48px,6vw,80px);align-items:start}
+/* the map is printed in the site's own inks: Google's colours are washed into menta and folha,
+   Google's floating card is cropped off the top (attribution stays visible at the bottom),
+   and the address hangs over its top-left corner as a pinho legend card (never over the attribution) */
+.clinic{position:relative;display:grid;align-content:start;min-width:0;max-width:100%}
+.clinic-map{position:relative;aspect-ratio:4/3;max-width:100%;border-radius:var(--r);overflow:hidden;background:var(--menta);isolation:isolate;contain:paint}
+.clinic-map iframe{position:absolute;left:0;top:-150px;width:1px;min-width:100%;max-width:100%;height:calc(100% + 150px);border:0;
+  filter:grayscale(1) contrast(1.06) brightness(1.03)}
+.clinic-map::before,.clinic-map::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1}
+.clinic-map::before{background:var(--menta);mix-blend-mode:multiply}
+.clinic-map::after{background:var(--folha);mix-blend-mode:color;opacity:.6}
+.clinic-info{position:relative;z-index:2;width:min(380px,calc(100% - 48px));margin:0 0 -96px 24px;padding:26px 28px 22px;
+  border-radius:18px;box-shadow:0 26px 48px -28px rgba(8,30,21,.65)}
+.clinic-info h3{color:var(--on-pinho)}
+.clinic .clinic-info h3 .icon{color:var(--lima)}
+.clinic-info .addr{color:var(--on-pinho)}
+.clinic-info .addr-sub{color:var(--on-pinho-muted)}
+.clinic-info .link-strong{color:var(--lima);text-decoration-color:rgba(201,228,106,.45);margin-top:6px}
+.clinic h3,.route h3{display:flex;align-items:center;gap:10px;font-size:1.3rem;margin-bottom:14px}
+.clinic h3 .icon,.route h3 .icon{color:var(--folha);width:1.1em;height:1.1em}
+.addr{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.25;color:var(--ink);letter-spacing:-.015em}
+.addr-sub{margin-top:8px;color:var(--muted);font-size:.96rem}
+.route{position:relative}
+.route>.pt-join{top:calc(100% - 30px)}
+@media (min-width:1181px){.stops{--uturn:32px}}
+.route-sub{color:var(--muted);max-width:48ch}
+.stops-wrap{position:relative;margin:48px 0 56px}
+.stops{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:64px 12px}
+.stops li{position:relative;display:flex;flex-direction:column-reverse;justify-content:flex-start;align-items:center;text-align:center;gap:10px;
+  font-weight:700;color:var(--ink);font-size:.95rem;line-height:1.25;white-space:nowrap}
+.stops li:nth-child(even){flex-direction:column}
+.stops li:nth-child(even){transform:translateY(34px)}
+.stop-dot{width:16px;height:16px;border-radius:50%;background:var(--menta);border:3px solid var(--folha);
+  transition:background-color .4s var(--ease),transform .4s var(--ease)}
+.stop-dot.is-reached{background:var(--folha);transform:scale(1.15)}
+.stops li:nth-child(5){grid-area:2/4}.stops li:nth-child(6){grid-area:2/3}.stops li:nth-child(7){grid-area:2/2}
+
+/* fecho */
+.final{overflow:hidden;padding-top:var(--sec)}
+.final-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,4vw,64px);align-items:end}
+.final-copy{align-self:center;padding-bottom:var(--sec)}
+.final-copy .lead{margin:26px 0 72px}
+.final-note{margin-top:56px;font-size:.92rem;color:var(--on-pinho-muted)}
+.final-figure{align-self:end;position:relative;z-index:2}
+.final-figure img{width:100%;max-width:520px;margin-inline:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.3))}
+.final-figure img{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 88%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 88%,transparent 100%)}
+.final-btn{position:relative;z-index:4}
+
+/* footer */
+.footer{background:var(--pinho-deep);color:var(--on-pinho-muted);padding-block:clamp(56px,6vw,80px) clamp(40px,4vw,56px)}
+.footer .brand-name{color:var(--on-pinho)}
+.footer-grid{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:32px 40px;align-items:start}
+/* one rhythm for every column: a 40px head row (logo or label), then the first line of content on the same baseline */
+.footer-brand .brand,.foot-h{min-height:40px;display:flex;align-items:center;margin:0 0 14px}
+.footer-brand p{font-size:.95rem;line-height:1.6;max-width:36ch}
+.foot-h{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--lima);margin-bottom:12px}
+.footer-col{display:flex;flex-direction:column;gap:12px}
+.footer-col .foot-h{margin-bottom:2px}
+.footer-col a,.footer-col p{display:flex;align-items:flex-start;gap:10px;font-size:.95rem;color:var(--on-pinho);text-decoration:none;line-height:1.6;margin:0}
+.footer-col a:hover{color:var(--lima)}
+.footer-col .icon{width:16px;height:16px;color:var(--lima);margin-top:.22em}
+.footer-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;
+  margin-top:44px;padding-top:26px;border-top:1px solid var(--line-dark);font-size:.86rem}
+.fb-info{display:flex;flex-direction:column;gap:4px}
+
+/* chibo dev signature */
+.footer-signature{display:flex;align-items:center;gap:11px;font-size:.78rem;color:var(--on-pinho-muted)}
+.footer-signature-label{white-space:nowrap;transition:color .18s ease-out}
+.footer-signature-pills{display:inline-flex;align-items:center;gap:10px}
+.footer-signature-divider{width:2px;height:17px;background-color:var(--line-dark);flex-shrink:0;border-radius:1px;transition:background-color .18s ease-out}
+.footer-signature a{display:inline-flex;align-items:center;gap:7px;color:var(--on-pinho);text-decoration:none;white-space:nowrap;
+  padding:7px 12px;border-radius:999px;border:1px solid var(--line-dark);
+  transition:transform .18s ease-out,box-shadow .18s ease-out,border-color .18s ease-out,color .18s ease-out,background-color .18s ease-out}
+.footer-signature a:hover{transform:translateY(-2px);box-shadow:0 8px 18px -10px rgba(0,0,0,.5)}
+.footer-signature{--chibo:#C9171E;--chibo-text:#EF5B60;--ig:#C13584;--ig-text:#F08AC7}
+/* the label belongs to the client's site (lima); each pill wears its own brand on hover */
+.footer-signature-label:hover{color:var(--lima);cursor:default}
+.footer-signature:has(.footer-signature-label:hover) .footer-signature-divider{background-color:var(--lima)}
+.footer-signature a:not(.is-ig):hover{border-color:var(--chibo);background:rgba(201,23,30,.14)}
+.footer-signature a:not(.is-ig):hover .chibo-name{color:var(--chibo-text)}
+.footer-signature:has(a:not(.is-ig):hover) .footer-signature-label{color:var(--chibo-text)}
+.footer-signature:has(a:not(.is-ig):hover) .footer-signature-divider{background-color:var(--chibo)}
+.footer-signature a.is-ig{font-weight:600}
+.footer-signature a.is-ig:hover{border-color:var(--ig);background:rgba(193,53,132,.16);color:var(--ig-text)}
+.footer-signature:has(a.is-ig:hover) .footer-signature-label{color:var(--ig-text)}
+.footer-signature:has(a.is-ig:hover) .footer-signature-divider{background-color:var(--ig)}
+.chibo-stamp{width:17px;height:17px;flex-shrink:0;color:#C9171E;transition:transform .25s var(--ease)}
+.footer-signature a:hover .chibo-stamp{transform:rotate(-6deg) scale(1.08)}
+.chibo-name{font-weight:600;transition:color .18s ease-out}
+.footer-signature .ig-icon{width:15px;height:15px;flex-shrink:0}
+@media (pointer:coarse),(max-width:760px){.footer-signature a{min-height:44px}}
+
+/* floating whatsapp */
+.fab{position:fixed;right:18px;bottom:18px;z-index:80;display:flex;align-items:center;gap:10px;
+  background:var(--pinho);color:var(--on-pinho);border:2px solid var(--lima);font-weight:700;text-decoration:none;padding:15px 22px;border-radius:999px;
+  box-shadow:0 16px 34px -12px rgba(12,47,34,.55);
+  transition:transform .45s var(--ease),opacity .3s ease,background-color .2s ease}
+.fab .icon{width:24px;height:24px}
+.fab .icon{color:var(--lima)}
+.fab:hover{background:var(--pinho-h)}
+@media (min-width:541px){
+  .fab{padding:16px;gap:0}
+  .fab span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .45s var(--ease),margin .45s var(--ease)}
+  .fab:is(:hover,:focus-visible) span{max-width:12em;margin-left:10px}
+}
+/* hidden also means out of the tab order: visibility flips after the fade, and straight back on show */
+.fab.is-hidden{opacity:0;visibility:hidden;transform:translateY(16px) scale(.96);pointer-events:none;
+  transition:opacity .3s ease,transform .45s var(--ease),visibility 0s linear .3s}
+
+/* responsive */
+@media (max-width:1080px){
+  .nav{display:none}
+}
+@media (max-width:1180px){
+  .footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .footer-brand{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:0 40px;align-items:center}
+  .footer-brand .brand{margin:0}
+  .footer-brand p{max-width:52ch}
+  .onde-grid{grid-template-columns:1fr}
+  .clinic{max-width:720px}
+  .route>.pt-join{top:calc(100% - 110px)}
+}
+@media (min-width:961px) and (max-width:1180px){
+  .spec{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.52fr);column-gap:32px}
+}
+@media (max-width:960px){
+  .spec{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .spec-for{grid-column:2;text-align:left}
+  .diffs{grid-template-columns:1fr}
+}
+@media (min-width:761px) and (max-width:1080px){
+  .steps-wrap{margin-top:92px}
+}
+@media (min-width:761px){
+  .steps{grid-template-rows:auto auto auto;row-gap:0}
+  .step{display:grid;grid-row:span 3;grid-template-rows:subgrid;justify-items:center;align-items:start}
+  .step h3{align-self:end}
+}
+@media (min-width:761px) and (max-width:999px){
+  .words-runway{height:84px}
+}
+@media (min-width:761px) and (max-width:900px){
+  .faq-grid{grid-template-columns:1fr;gap:40px}
+  .faq-head{position:static}
+  .faq-list{--faq-exit:40%}
+}
+@media (min-width:761px) and (max-width:800px){
+  .espaco-head{grid-template-columns:1fr}
+}
+@media (min-width:761px) and (max-width:1080px) and (orientation:portrait){
+  .hero-figure{height:auto;width:calc(100% + var(--pad));margin-right:calc(var(--pad) * -1);justify-self:end}
+  .hero-figure img{width:100%;height:auto;max-width:100%}
+  .sobre-grid{grid-template-columns:1fr}
+  .sobre-copy{max-width:34rem;padding-bottom:96px}
+  .sobre-figure{width:min(520px,72%);margin-right:calc(var(--pad) * -1);margin-bottom:-12%}
+}
+@media (min-width:761px) and (orientation:portrait){
+  .hero{min-height:min(100svh,1040px)}
+}
+@media (min-width:761px) and (min-height:600px) and (max-height:860px){
+  .hero h1{font-size:clamp(2.6rem,min(1.2rem + 5vw,10svh),5.4rem)}
+  .hero-copy{padding-top:clamp(24px,4vh,96px)}
+  .hero-lead{margin-top:20px}
+  .hero-actions{margin-top:26px}
+}
+@media (max-width:760px){
+  :root{--pad:28px}
+  body{font-size:1.04rem}
+  .brand-sub{display:none}
+  .hero{min-height:auto}
+  .hero-grid,.sinais-grid,.oque-grid,.sobre-grid,.faq-grid,.final-grid,.spec-head,.espaco-head{grid-template-columns:1fr}
+  .hero-copy{padding-block:40px 88px}
+  .hero-figure{height:auto;width:86%;max-width:440px;margin-inline:auto}
+  .hero.studio{--sx:50%;--sy:72%}
+  .final.studio{--sx:66%;--sy:78%}
+  .hero-figure img{height:auto;width:100%}
+  .origin{bottom:20px;left:0}
+  .faq-head{position:static}
+  .dep-grid{grid-template-columns:1fr;gap:40px}
+  .dep-head{position:static}
+  .sinais-list{padding-left:0}
+  .sinais-photo img{aspect-ratio:4/3}
+  .si-ic{width:28px;height:28px}
+  .sp-ic{width:30px;height:30px}
+  .spec-mark{margin-left:44px}
+  .tick{left:calc(var(--pad) * -.55)}
+  .spec-tick{right:auto;left:calc(var(--pad) * -.55 - 11px)}
+  .quote-row{padding-left:0}
+  .oque-photo{width:88%}
+  .words-runway{display:none}
+  .steps{grid-template-columns:1fr;gap:56px;justify-items:start}
+  .step{text-align:left;align-items:flex-start;padding-left:0}
+  .step{display:grid;grid-template-columns:64px 1fr;column-gap:20px;align-items:start}
+  .step .node{grid-row:span 2}
+  .step h3{margin:10px 0 8px}
+  .steps-cta{width:auto;text-align:left}
+  #comecar :is(h2,.lead).center{text-align:left;margin-inline:0}
+  .spec{grid-template-columns:1fr;gap:8px}
+  .spec-for{grid-column:auto}
+  .sobre-figure{width:80%;margin-right:calc(var(--pad) * -1);margin-bottom:-12%}
+  .sobre-copy{position:relative;padding-bottom:72px}
+  .diffs{grid-template-columns:1fr}
+  .clinic-info{width:auto;margin:0 14px -56px;padding:22px 22px 18px}
+  .clinic-map iframe{top:0;height:100%}
+  /* the route snakes down in two columns, like the desktop one turned on its side:
+     row by row, left-right then right-left, round U-turns in the margins; names alternate below/above */
+  .stops-wrap{margin:36px 0 64px}
+  .stops{grid-template-columns:1fr 1fr;gap:24px 0}
+  .stops li,.stops li:nth-child(even){gap:10px;white-space:nowrap;font-size:.92rem;line-height:18px;transform:none}
+  .stops li:nth-child(odd){flex-direction:column;padding-top:28px}
+  .stops li:nth-child(even){flex-direction:column-reverse;padding-bottom:28px}
+  .stops li:nth-child(1){grid-area:1/1}.stops li:nth-child(2){grid-area:1/2}.stops li:nth-child(3){grid-area:2/2}
+  .stops li:nth-child(4){grid-area:2/1}.stops li:nth-child(5){grid-area:3/1}.stops li:nth-child(6){grid-area:3/2}
+  .stops li:nth-child(7){grid-area:4/2}
+  /* each dot sits 36px down its 72px cell; the next row is 96px below */
+  .pt-u{top:84px}
+  .pt-u-r{left:calc(50% + clamp(44px,15vw,64px))}
+  .pt-u-l{left:calc(50% - clamp(44px,15vw,64px))}
+  .pt-row{top:36px;left:50%}
+  .final-copy{padding-bottom:24px}
+  .final-note{margin-top:76px}
+  .final-copy .lead{margin-bottom:84px}
+  .final-figure{width:80%;margin:0 calc(var(--pad) * -1) 0 auto}
+  .final-figure img{max-width:none;margin-inline:0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%);mask-image:linear-gradient(90deg,transparent,#000 8%)}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .footer-brand{display:block}
+  .footer-brand .brand{margin-bottom:10px}
+  .foot-h{min-height:0;margin-bottom:12px}
+  /* every row the same: 10px above and below the text (44px+ touch rows), icons on the first line */
+  .footer-col{gap:0}
+  .footer-col a,.footer-col p{padding-block:10px;min-height:44px}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .footer-signature{flex-wrap:wrap}
+  .footer{padding-bottom:96px}
+  .faq-a{padding-right:0}
+  .measure p,.diffs dd,.faq-a{max-width:34em}
+  .frame{flex-basis:min(72vw,400px)}
+}
+@media (max-width:540px){
+  .btn{width:100%}
+  .site-header .btn{width:auto}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .link-quiet{justify-content:center}
+  .fab span{display:none}
+  .fab{padding:16px;border-radius:50%}
+  .brand-name{font-size:1.08rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}
+}
+
+/* entrances: content arrives as the line reaches it */
+.js-motion :is(h1,h2,.display-name){clip-path:inset(-20% -10% 105% -10%);transform:translateY(.35em);
+  transition:clip-path 1.1s var(--ease),transform 1.1s var(--ease)}
+.js-motion :is(.hero-lead,.hero-actions,.lead,.measure>p,.sobre-role,.quote-row>*,.spec-help,.insta-row,
+  .route>h3,.route-sub,.route>.btn,.clinic-info,.testimonial,.dep-rating,.dep-head>.link-quiet,.final-copy>.btn,.final-note,.coopmed,.sobre-copy>.btn,
+  .sinais-list>li,.spec,.step,.diffs>div,.faq,.stops>li,.frame,.lk-role,.lk-cref,.lk-greet,.lk-links>*,.steps-cta,.footer-grid>*){
+  opacity:0;translate:0 22px;transition:opacity .9s var(--ease),translate .9s var(--ease)}
+/* entering buttons and rows keep their own hover easing alongside the entrance */
+.js-motion :is(.quote-row,.route,.final-copy,.sobre-copy,.dep-head,.lk-links)>:is(.btn,.lk-row,.link-quiet){
+  transition:opacity .9s var(--ease) calc(var(--i,0) * 90ms),translate .9s var(--ease) calc(var(--i,0) * 90ms),transform .35s var(--ease),
+    background-color .2s ease,box-shadow .35s var(--ease),color .2s ease,text-decoration-color .25s ease,text-underline-offset .35s var(--ease)}
+.js-motion :is(.quote-row,.route,.final-copy,.sobre-copy,.lk-links)>.btn-action:active{transition-duration:.9s,.9s,.08s,.08s,.08s,.08s,.25s,.35s}
+.js-motion :is(.oque-photo img,.sinais-photo img,.clinic-map){clip-path:inset(18% 0 0 0 round var(--r));scale:1.06;
+  transition:clip-path 1.3s var(--ease),scale 1.6s var(--ease)}
+.js-motion :is(.hero-figure,.sobre-figure,.final-figure,.lk-figure){opacity:0;translate:0 64px;
+  transition:opacity 1.1s var(--ease),translate 1.4s var(--ease)}
+.js-motion .in{transition-delay:calc(var(--i,0) * 90ms)}
+.js-motion :is(h1,h2,.display-name).in{clip-path:inset(-20% -10% -30% -10%);transform:none}
+.js-motion .in:not(h1,h2,.display-name){opacity:1;translate:0 0}
+.js-motion :is(.oque-photo img,.sinais-photo img,.clinic-map).in{clip-path:inset(0 0 0 0 round var(--r));scale:1}
+.js-motion .stops>li:nth-child(even).in{translate:0 0}
+
+/* menu: below 1080px the nav becomes a full-screen sheet; each link carries a short lima tick */
+.menu-toggle{display:none;flex-shrink:0;position:relative;z-index:96;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line-dark);
+  background:transparent;color:var(--on-pinho);cursor:pointer;place-items:center}
+.menu-toggle .bars{position:relative;display:block;width:18px;height:12px}
+.menu-toggle .bars i{position:absolute;left:0;width:100%;height:2px;border-radius:2px;background:currentColor;
+  transition:transform .45s var(--ease),top .45s var(--ease)}
+.menu-toggle .bars i:first-child{top:1px}
+.menu-toggle .bars i:last-child{top:9px}
+.menu-open .menu-toggle .bars i:first-child{top:5px;transform:rotate(45deg)}
+.menu-open .menu-toggle .bars i:last-child{top:5px;transform:rotate(-45deg)}
+.menu-toggle:hover{border-color:var(--lima);color:var(--lima)}
+.menu-sheet{position:fixed;inset:0;z-index:95;display:flex;overflow-y:auto;overscroll-behavior:contain;
+  padding:96px var(--pad) 40px;clip-path:inset(0 0 100% 0);visibility:hidden;
+  transition:clip-path .7s var(--ease),visibility 0s linear .7s}
+.menu-open .menu-sheet{clip-path:inset(0 0 0 0);visibility:visible;transition:clip-path .7s var(--ease),visibility 0s}
+.menu-nav{width:100%;max-width:560px;margin:auto;display:flex;flex-direction:column;gap:40px}
+.menu-list{position:relative}
+.menu-list a{position:relative;display:flex;align-items:center;min-height:56px;padding-left:32px;text-decoration:none;color:var(--on-pinho);
+  font-family:var(--display);font-weight:700;font-variation-settings:"wdth" 92;letter-spacing:-.015em;
+  font-size:clamp(1.6rem,1.2rem + 2.2vw,2.3rem);line-height:1.1;
+  opacity:0;translate:0 14px;transition:opacity .6s var(--ease),translate .6s var(--ease),color .2s ease}
+.menu-open .menu-list a{opacity:1;translate:0 0}
+/* the stagger delays the entrance only (opacity, translate); the hover colour answers at once */
+.menu-list li:nth-child(1) a{transition-delay:.12s,.12s,0s}.menu-list li:nth-child(2) a{transition-delay:.17s,.17s,0s}
+.menu-list li:nth-child(3) a{transition-delay:.22s,.22s,0s}.menu-list li:nth-child(4) a{transition-delay:.27s,.27s,0s}
+.menu-list li:nth-child(5) a{transition-delay:.32s,.32s,0s}.menu-list li:nth-child(6) a{transition-delay:.37s,.37s,0s}
+.menu-list li:nth-child(7) a{transition-delay:.42s,.42s,0s}
+.menu-list a:hover{color:var(--lima)}
+.menu-tick{position:absolute;left:0;top:50%;width:18px;height:3px;border-radius:3px;background:var(--lima);transform:translateY(-50%);transform-origin:left}
+.menu-foot{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
+.menu-ig{display:inline-flex;align-items:center;gap:9px;color:var(--on-pinho);font-weight:600;text-decoration:none;min-height:44px}
+.menu-ig .icon{color:var(--lima);width:1.2em;height:1.2em}
+.menu-ig:hover{color:var(--lima)}
+.menu-open{overflow:hidden}
+.menu-open .site-header{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+.menu-open .fab{opacity:0;pointer-events:none}
+@media (max-width:1080px){
+  .menu-toggle{display:grid}
+  .header-inner{gap:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  .menu-sheet,.menu-open .menu-sheet{transition:none}
+}
+.menu-open .site-header{z-index:97}
+@media (max-width:540px){
+  .header-inner{gap:10px}
+}
+@media (max-width:374px){
+  .btn{padding-inline:18px;gap:9px;font-size:.95rem;text-align:center;line-height:1.15;text-wrap:balance}
+  .btn-lg{padding-inline:20px;font-size:1rem}
+  .display-xl{font-size:2.45rem}
+  .hero h1{max-width:7.02em}
+  .addr{font-size:1.3rem}
+}
+@media (max-width:420px){
+  .site-header .btn-sm{width:44px;height:44px;min-height:44px;padding:0;gap:0;border-radius:50%}
+  .site-header .btn-sm .cta-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+}
+/* the narrowest phones: the brand name stays clear of the header button; the map link keeps its arrow beside it */
+@media (max-width:340px){
+  .site-header .brand{gap:10px}
+  .site-header .brand-name{font-size:1rem}
+}
+@media (max-width:335px){
+  .clinic-info{padding-inline:16px}
+}
+/* touch tablets and landscape phones get the phones' 44px footer rows (the first row keeps its line with the brand text) */
+@media (pointer:coarse) and (min-width:761px){
+  .footer-col{gap:0}
+  .footer-col .foot-h{margin-bottom:4px}
+  .footer-col a,.footer-col p{padding-block:10px;min-height:44px}
+}
+/* short landscape screens: room under the signature so the floating button never covers it */
+@media (min-width:761px) and (max-height:560px){
+  .footer{padding-bottom:96px}
+}
+/* /links: the signature keeps the page gutter and centres when it wraps */
+.lk-foot{padding-inline:28px}
+.lk-foot .footer-signature{justify-content:center}
+/* without JavaScript: a solid header (nothing turns it solid on scroll) and no menu button that cannot open */
+@media (scripting:none){
+  .site-header{background:var(--pinho)}
+  .menu-toggle{display:none!important}
+}
+@media (min-width:761px) and (max-height:500px){
+  .header-inner{min-height:60px}
+  section[id]{scroll-margin-top:60px}
+  .hero{padding-top:60px}
+  .hero-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr)}
+  .hero-copy{padding-block:8px 60px}
+  .hero h1{font-size:clamp(2rem,8.6vh,2.6rem);max-width:none}
+  .hero-lead{margin-top:12px;max-width:54ch;font-size:1rem;line-height:1.5}
+  .hero-actions{margin-top:16px}
+  .hero-actions .btn-lg{min-height:54px;padding-block:16px}
+  .origin{bottom:16px}
+  .hero-figure{height:calc(100svh - 104px)}
+  .menu-open .site-header{background:var(--pinho);box-shadow:0 1px 0 var(--line-dark)}
+  .menu-sheet{padding:68px var(--pad) 8px}
+  .menu-nav{max-width:760px;flex-direction:row;align-items:center;justify-content:space-between;gap:32px}
+  .menu-list a{min-height:44px;font-size:clamp(1.3rem,6.4vh,1.7rem)}
+  .menu-foot{flex-direction:column;align-items:flex-start;padding-left:0}
+}
+
+/* hover pass: the line is the gesture — strokes draw, arrows travel, the WhatsApp mark sways.
+   Only where a real pointer hovers, so nothing sticks after a tap. */
+.nav a{position:relative}
+.nav a::after{content:"";position:absolute;left:12px;right:12px;bottom:5px;height:2px;border-radius:2px;background:var(--lima);
+  transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.nav a:focus-visible::after{transform:scaleX(1)}
+.btn-action .icon,.link-strong .icon,.link-quiet .icon,.lk-row .arr,.faq-icon,.menu-tick,.brand-logo,.footer-col a .icon,.fab .icon{
+  transition:transform .45s var(--ease),background-color .3s ease,color .3s ease}
+.btn-action:active{transform:translateY(0) scale(.98);transition-duration:.08s}
+.link-strong,.link-quiet{text-underline-offset:.28em;transition:text-decoration-color .25s ease,text-underline-offset .35s var(--ease),color .2s ease}
+.frame img{transition:transform .6s var(--ease),box-shadow .6s var(--ease),filter .6s var(--ease)}
+.frame-cap{transition:color .3s ease}
+@media (hover:hover) and (pointer:fine){
+  .nav a:hover::after{transform:scaleX(1)}
+  .btn-action:hover .icon{transform:rotate(-12deg) scale(1.08)}
+  .link-strong:hover,.link-quiet:hover{text-underline-offset:.4em}
+  .link-strong:hover .icon,.link-quiet:hover .icon{transform:translateX(4px)}
+  .link-quiet:hover .icon:has(use[href="#i-down"]){transform:translateY(3px)}
+  .faq summary:hover .faq-icon{background:rgba(40,111,71,.1);transform:rotate(90deg)}
+  .faq[open] summary:hover .faq-icon{transform:rotate(135deg) scale(1.06);background:var(--folha)}
+  .frame:hover img{transform:translateY(-6px);box-shadow:0 26px 40px -26px rgba(16,36,27,.55);filter:saturate(1.08)}
+  .frame:hover .frame-cap{color:var(--folha)}
+  .menu-list a:hover .menu-tick{transform:translateY(-50%) scaleX(1.7)}
+  .brand:hover .brand-logo{transform:rotate(-6deg)}
+  .footer-col a:hover .icon{transform:translateX(2px)}
+  .fab:hover{transform:translateY(-3px);box-shadow:0 22px 40px -14px rgba(12,47,34,.6)}
+  .fab:hover .icon{transform:rotate(-12deg)}
+  .lk-row:hover .dot{transform:scale(1.2)}
+  .faq.is-closing summary:hover .faq-icon{transform:rotate(90deg);background:rgba(40,111,71,.1);color:var(--folha)}
+}
+/* the floating button sits over light and dark sections alike: a pinho ring inside a lima outline reads on both */
+.fab:focus-visible{outline-color:var(--lima);box-shadow:0 0 0 3px var(--pinho),0 16px 34px -12px rgba(12,47,34,.55)}
+
+/* mobile route choreography */
+@media (max-width:760px){#comecar .step{position:relative}}

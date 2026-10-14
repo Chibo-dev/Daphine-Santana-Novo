@@ -1,0 +1,706 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T20:50:59.223064+00:00",
+  "title": "Design System: Espaço Daphine Santana",
+  "extensions": {
+    "colorMeta": {
+      "pinho": {
+        "role": "primary",
+        "displayName": "Pinho Field",
+        "canonical": "oklch(33.1% 0.058 165)",
+        "tonalRamp": [
+          "oklch(15% 0.058 165)",
+          "oklch(25% 0.058 165)",
+          "oklch(35% 0.058 165)",
+          "oklch(48% 0.058 165)",
+          "oklch(60% 0.058 165)",
+          "oklch(72% 0.058 165)",
+          "oklch(84% 0.058 165)",
+          "oklch(95% 0.058 165)"
+        ]
+      },
+      "pinho-deep": {
+        "role": "primary",
+        "displayName": "Pinho Deep",
+        "canonical": "oklch(27.6% 0.047 165)",
+        "tonalRamp": [
+          "oklch(15% 0.047 165)",
+          "oklch(25% 0.047 165)",
+          "oklch(35% 0.047 165)",
+          "oklch(48% 0.047 165)",
+          "oklch(60% 0.047 165)",
+          "oklch(72% 0.047 165)",
+          "oklch(84% 0.047 165)",
+          "oklch(95% 0.047 165)"
+        ]
+      },
+      "folha": {
+        "role": "primary",
+        "displayName": "Folha Line",
+        "canonical": "oklch(48.6% 0.096 155)",
+        "tonalRamp": [
+          "oklch(15% 0.096 155)",
+          "oklch(25% 0.096 155)",
+          "oklch(35% 0.096 155)",
+          "oklch(48% 0.096 155)",
+          "oklch(60% 0.096 155)",
+          "oklch(72% 0.096 155)",
+          "oklch(84% 0.096 155)",
+          "oklch(95% 0.096 155)"
+        ]
+      },
+      "lima": {
+        "role": "secondary",
+        "displayName": "Lima Line",
+        "canonical": "oklch(87.4% 0.151 120)",
+        "tonalRamp": [
+          "oklch(15% 0.151 120)",
+          "oklch(25% 0.151 120)",
+          "oklch(35% 0.151 120)",
+          "oklch(48% 0.151 120)",
+          "oklch(60% 0.151 120)",
+          "oklch(72% 0.151 120)",
+          "oklch(84% 0.151 120)",
+          "oklch(95% 0.151 120)"
+        ]
+      },
+      "nevoa": {
+        "role": "neutral",
+        "displayName": "Névoa",
+        "canonical": "oklch(96.5% 0.009 135)",
+        "tonalRamp": [
+          "oklch(15% 0.009 135)",
+          "oklch(25% 0.009 135)",
+          "oklch(35% 0.009 135)",
+          "oklch(48% 0.009 135)",
+          "oklch(60% 0.009 135)",
+          "oklch(72% 0.009 135)",
+          "oklch(84% 0.009 135)",
+          "oklch(95% 0.009 135)"
+        ]
+      },
+      "branco": {
+        "role": "neutral",
+        "displayName": "Branco",
+        "canonical": "oklch(99.0% 0.003 128)",
+        "tonalRamp": [
+          "oklch(15% 0.003 128)",
+          "oklch(25% 0.003 128)",
+          "oklch(35% 0.003 128)",
+          "oklch(48% 0.003 128)",
+          "oklch(60% 0.003 128)",
+          "oklch(72% 0.003 128)",
+          "oklch(84% 0.003 128)",
+          "oklch(95% 0.003 128)"
+        ]
+      },
+      "menta": {
+        "role": "neutral",
+        "displayName": "Menta",
+        "canonical": "oklch(92.6% 0.024 145)",
+        "tonalRamp": [
+          "oklch(15% 0.024 145)",
+          "oklch(25% 0.024 145)",
+          "oklch(35% 0.024 145)",
+          "oklch(48% 0.024 145)",
+          "oklch(60% 0.024 145)",
+          "oklch(72% 0.024 145)",
+          "oklch(84% 0.024 145)",
+          "oklch(95% 0.024 145)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(24.0% 0.032 163)",
+        "tonalRamp": [
+          "oklch(15% 0.032 163)",
+          "oklch(25% 0.032 163)",
+          "oklch(35% 0.032 163)",
+          "oklch(48% 0.032 163)",
+          "oklch(60% 0.032 163)",
+          "oklch(72% 0.032 163)",
+          "oklch(84% 0.032 163)",
+          "oklch(95% 0.032 163)"
+        ]
+      },
+      "body": {
+        "role": "neutral",
+        "displayName": "Body",
+        "canonical": "oklch(34.8% 0.030 161)",
+        "tonalRamp": [
+          "oklch(15% 0.030 161)",
+          "oklch(25% 0.030 161)",
+          "oklch(35% 0.030 161)",
+          "oklch(48% 0.030 161)",
+          "oklch(60% 0.030 161)",
+          "oklch(72% 0.030 161)",
+          "oklch(84% 0.030 161)",
+          "oklch(95% 0.030 161)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "oklch(47.0% 0.034 162)",
+        "tonalRamp": [
+          "oklch(15% 0.034 162)",
+          "oklch(25% 0.034 162)",
+          "oklch(35% 0.034 162)",
+          "oklch(48% 0.034 162)",
+          "oklch(60% 0.034 162)",
+          "oklch(72% 0.034 162)",
+          "oklch(84% 0.034 162)",
+          "oklch(95% 0.034 162)"
+        ]
+      },
+      "on-pinho": {
+        "role": "neutral",
+        "displayName": "On-Pinho",
+        "canonical": "oklch(96.0% 0.012 138)",
+        "tonalRamp": [
+          "oklch(15% 0.012 138)",
+          "oklch(25% 0.012 138)",
+          "oklch(35% 0.012 138)",
+          "oklch(48% 0.012 138)",
+          "oklch(60% 0.012 138)",
+          "oklch(72% 0.012 138)",
+          "oklch(84% 0.012 138)",
+          "oklch(95% 0.012 138)"
+        ]
+      },
+      "on-pinho-muted": {
+        "role": "neutral",
+        "displayName": "On-Pinho Muted",
+        "canonical": "oklch(82.8% 0.032 156)",
+        "tonalRamp": [
+          "oklch(15% 0.032 156)",
+          "oklch(25% 0.032 156)",
+          "oklch(35% 0.032 156)",
+          "oklch(48% 0.032 156)",
+          "oklch(60% 0.032 156)",
+          "oklch(72% 0.032 156)",
+          "oklch(84% 0.032 156)",
+          "oklch(95% 0.032 156)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "oklch(88.1% 0.022 145)",
+        "tonalRamp": [
+          "oklch(15% 0.022 145)",
+          "oklch(25% 0.022 145)",
+          "oklch(35% 0.022 145)",
+          "oklch(48% 0.022 145)",
+          "oklch(60% 0.022 145)",
+          "oklch(72% 0.022 145)",
+          "oklch(84% 0.022 145)",
+          "oklch(95% 0.022 145)"
+        ]
+      },
+      "pinho-soft": {
+        "role": "primary",
+        "displayName": "Pinho Soft",
+        "tonalRamp": [
+          "oklch(15% 0.058 165)",
+          "oklch(25% 0.058 165)",
+          "oklch(35% 0.058 165)",
+          "oklch(48% 0.058 165)",
+          "oklch(60% 0.058 165)",
+          "oklch(72% 0.058 165)",
+          "oklch(84% 0.058 165)",
+          "oklch(95% 0.058 165)"
+        ]
+      },
+      "line-dark": {
+        "role": "neutral",
+        "displayName": "Rule on Dark",
+        "canonical": "rgba(201,228,106,.22)"
+      },
+      "lima-h": {
+        "role": "secondary",
+        "displayName": "Lima Hover",
+        "canonical": "oklch(91.0% 0.135 120)",
+        "tonalRamp": [
+          "oklch(15% 0.135 120)",
+          "oklch(25% 0.135 120)",
+          "oklch(35% 0.135 120)",
+          "oklch(48% 0.135 120)",
+          "oklch(60% 0.135 120)",
+          "oklch(72% 0.135 120)",
+          "oklch(84% 0.135 120)",
+          "oklch(95% 0.135 120)"
+        ]
+      },
+      "pinho-h": {
+        "role": "primary",
+        "displayName": "Pinho Hover",
+        "canonical": "oklch(38.5% 0.058 162)",
+        "tonalRamp": [
+          "oklch(15% 0.058 162)",
+          "oklch(25% 0.058 162)",
+          "oklch(35% 0.058 162)",
+          "oklch(48% 0.058 162)",
+          "oklch(60% 0.058 162)",
+          "oklch(72% 0.058 162)",
+          "oklch(84% 0.058 162)",
+          "oklch(95% 0.058 162)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero h1, closing h2 and the 404 h1; the sobre name heading uses the same scale."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2s."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Specialty names, step titles."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "Display face at reading size: sinais rows, pull quote, review quotes, FAQ questions."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "One-sentence standfirst under a heading, max 56ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, max 60ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Button labels; small bold folha sans for specialty audiences and notes."
+      },
+      "path-word": {
+        "displayName": "Path Word",
+        "purpose": "Milestone words set on the SVG line; 13px on mobile."
+      }
+    },
+    "shadows": [
+      {
+        "name": "action-rest",
+        "value": "0 10px 24px -14px rgba(8,30,21,.55)",
+        "purpose": "Pinho action on light grounds at rest."
+      },
+      {
+        "name": "action-lift",
+        "value": "0 18px 34px -16px rgba(8,30,21,.6)",
+        "purpose": "Pinho action on hover with 2px rise."
+      },
+      {
+        "name": "action-on-pinho",
+        "value": "0 12px 26px -14px rgba(0,0,0,.6)",
+        "purpose": "Lima action on pinho grounds and in the header."
+      },
+      {
+        "name": "floating-action",
+        "value": "0 16px 34px -12px rgba(12,47,34,.55)",
+        "purpose": "Fixed WhatsApp button (pinho, 2px lima ring); hover 0 22px 40px -14px rgba(12,47,34,.6) with a 3px rise."
+      },
+      {
+        "name": "photo-settle",
+        "value": "0 30px 60px -36px rgba(16,36,27,.55)",
+        "purpose": "Feature photos: therapy photo in O que é (.55) and room photo in Sinais (.5)."
+      },
+      {
+        "name": "legend-card",
+        "value": "0 26px 48px -28px rgba(8,30,21,.65)",
+        "purpose": "Pinho address card hanging over the map."
+      },
+      {
+        "name": "frame-lift",
+        "value": "0 26px 40px -26px rgba(16,36,27,.55)",
+        "purpose": "Gallery photo on hover, with a 6px rise (fine pointers)."
+      },
+      {
+        "name": "signature-lift",
+        "value": "0 8px 18px -10px rgba(0,0,0,.5)",
+        "purpose": "Footer credit pills on hover, with a 2px rise."
+      },
+      {
+        "name": "cutout",
+        "value": "drop-shadow(0 30px 40px rgba(0,0,0,.28))",
+        "purpose": "filter on alpha cutouts over pinho (.3 on the close)."
+      },
+      {
+        "name": "header-glass",
+        "value": "0 1px 0 rgba(201,228,106,.22); background rgba(18,63,46,.94); backdrop-filter blur(12px)",
+        "purpose": "Header after 24px scroll."
+      },
+      {
+        "name": "studio-canvas",
+        "value": "radial-gradient(ellipse 34% 9% at var(--sx) 100%, rgba(3,16,11,.55), transparent 72%), radial-gradient(ellipse 42% 52% at var(--sx) var(--sy), rgba(120,190,150,.16), transparent 70%), radial-gradient(ellipse 130% 95% at var(--sx) 45%, transparent 52%, rgba(5,22,15,.62) 100%), var(--canvas) cover on pinho",
+        "purpose": "Painted studio backdrop for portrait sections, the share image and the 404: floor shadow, light behind the sitter, vignette."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "The single easing for entrances, lifts, ticks and nodes."
+      },
+      {
+        "name": "heading-unveil",
+        "value": "clip-path inset(-20% -10% 105% -10%) + translateY(.35em) -> open, 1.1s ease",
+        "purpose": "h1, h2 and the name heading."
+      },
+      {
+        "name": "content-rise",
+        "value": "opacity 0 + translate 0 22px -> rest, .9s ease",
+        "purpose": "Copy, rows, actions, frames."
+      },
+      {
+        "name": "photo-unclip",
+        "value": "clip-path inset(18% 0 0 0 round 22px) + scale 1.06 -> rest, 1.3s/1.6s ease",
+        "purpose": "Rectangular photos."
+      },
+      {
+        "name": "cutout-rise",
+        "value": "opacity 0 + translate 0 64px -> rest, 1.1s/1.4s ease",
+        "purpose": "Cutout figures."
+      },
+      {
+        "name": "stagger",
+        "value": "90ms per sibling, capped at 8",
+        "purpose": "Reading-order stagger within a group."
+      },
+      {
+        "name": "tick-reach",
+        "value": "scaleX 0 -> 1, .5s ease",
+        "purpose": "Ticks, nodes and dots when the pen passes."
+      },
+      {
+        "name": "path-word-fade",
+        "value": "opacity .6s ease",
+        "purpose": "Words on the line appear after the pen passes."
+      },
+      {
+        "name": "fab-label",
+        "value": "max-width 0 -> 12em, .45s ease",
+        "purpose": "Floating button label slides out on hover/focus (desktop)."
+      },
+      {
+        "name": "line-follow",
+        "value": "one travelled distance poured into the segments in order; per-frame glide k = 1 - g^(dt/16.7), g longer on large screens (.895), shorter on phones (.83) and short screens (.8)",
+        "purpose": "The single stroke and its head."
+      },
+      {
+        "name": "line-schedule",
+        "value": "scroll measured along the route: blend of depth and route length, sideways travel weighted .8",
+        "purpose": "Flat runs and loops are spread over the scroll instead of firing off or stalling."
+      },
+      {
+        "name": "line-intro",
+        "value": "2.2–3.6s, grows with line length, cubic ease-in-out",
+        "purpose": "A data-intro section (hero, /links) draws its whole line on load at a walking pace."
+      },
+      {
+        "name": "line-trail",
+        "value": "stroke 2.2, dasharray 0 10, round caps, opacity .32 (.3 on pinho)",
+        "purpose": "Dotted route ahead of the head; hidden under reduced motion."
+      },
+      {
+        "name": "ghost-appear",
+        "value": "ghost opacity ramps in after the first 60px of stroke over 140px; each echo trails 40px further back",
+        "purpose": "Echoes appear only once the head has a real stroke behind it."
+      },
+      {
+        "name": "pinned-gallery",
+        "value": "stage sticky under the header; vertical scroll translates the strip; hold of min(160px, 18vh) at both ends",
+        "purpose": "O espaço film. Short screens: strip only, heading fades over the hold. Floating button hides while held. Off under reduced motion."
+      },
+      {
+        "name": "growing-child",
+        "value": "limbs posed from distance travelled (no-slip stride), stage per section: sit, crawl, walk, run; stage cross-fade .35s",
+        "purpose": "The child at the head of the line; only the sitting stage idles in time. Absent under reduced motion."
+      },
+      {
+        "name": "menu-sheet",
+        "value": "clip-path inset(0 0 100% 0) -> inset(0), .7s ease; links stagger 50ms",
+        "purpose": "Full-screen menu below 1081px."
+      },
+      {
+        "name": "faq-slide",
+        "value": "open 460ms ease, close 320ms cubic-bezier(.4,0,.2,1)",
+        "purpose": "FAQ answers slide; one open at a time."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "no js-motion; whole line drawn at once, no ghosts, no trail, no intro, no child, no pin; transitions .001ms",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "min-width 1700px"
+      },
+      {
+        "name": "onde-stack",
+        "value": "max-width 1180px"
+      },
+      {
+        "name": "specialties-tight",
+        "value": "961px–1180px"
+      },
+      {
+        "name": "nav-collapse",
+        "value": "max-width 1080px (menu sheet; desktop from 1081px)"
+      },
+      {
+        "name": "reflow",
+        "value": "max-width 960px"
+      },
+      {
+        "name": "faq-stack",
+        "value": "761px–900px"
+      },
+      {
+        "name": "portrait-tablet",
+        "value": "761px–1080px, orientation portrait"
+      },
+      {
+        "name": "laptop-height",
+        "value": "min-width 761px, height 600px–860px"
+      },
+      {
+        "name": "landscape-phone",
+        "value": "min-width 761px, max-height 500px"
+      },
+      {
+        "name": "mobile",
+        "value": "max-width 760px"
+      },
+      {
+        "name": "narrow",
+        "value": "max-width 540px"
+      },
+      {
+        "name": "small-phone",
+        "value": "max-width 374px"
+      },
+      {
+        "name": "header-icon-only",
+        "value": "max-width 420px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "WhatsApp Action (light ground)",
+      "kind": "button",
+      "refersTo": "button-action",
+      "description": "The only button: on light grounds it is pinho with on-pinho text and a lima icon.",
+      "html": "<div class=\"ds-ground\"><a class=\"ds-btn-action\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z\"/><path d=\"M9 8.8c0 3 2.6 6 6 6.4l1.3-1.3-2-1-1 .9c-1.2-.5-2.3-1.6-2.8-2.8l.9-1-1-2z\"/></svg>Agendar avaliação</a></div>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-ground{background:var(--nevoa);padding:24px}.ds-btn-action{display:inline-flex;align-items:center;gap:11px;font-family:var(--sans);font-weight:700;font-size:1.02rem;line-height:1;min-height:54px;padding:17px 26px;border-radius:999px;text-decoration:none;transition:transform .35s var(--ease),background-color .2s ease,box-shadow .35s var(--ease)}.ds-btn-action:hover{transform:translateY(-2px)}.ds-btn-action:active{transform:translateY(0)}.ds-btn-action{background:var(--pinho);color:var(--on-pinho);box-shadow:0 10px 24px -14px rgba(8,30,21,.55)}.ds-btn-action svg{color:var(--lima)}.ds-btn-action:hover{background:var(--pinho-h);box-shadow:0 18px 34px -16px rgba(8,30,21,.6)}.ds-btn-action:focus-visible{outline:3px solid var(--folha);outline-offset:3px}"
+    },
+    {
+      "name": "WhatsApp Action (pinho ground)",
+      "kind": "button",
+      "refersTo": "button-action-on-pinho",
+      "description": "On pinho grounds and in the header the action inverts to lima with pinho text and icon.",
+      "html": "<div class=\"ds-ground\"><a class=\"ds-btn-action\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z\"/><path d=\"M9 8.8c0 3 2.6 6 6 6.4l1.3-1.3-2-1-1 .9c-1.2-.5-2.3-1.6-2.8-2.8l.9-1-1-2z\"/></svg>Agendar avaliação</a></div>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-ground{background:var(--pinho);padding:24px}.ds-btn-action{display:inline-flex;align-items:center;gap:11px;font-family:var(--sans);font-weight:700;font-size:1.02rem;line-height:1;min-height:54px;padding:17px 26px;border-radius:999px;text-decoration:none;transition:transform .35s var(--ease),background-color .2s ease,box-shadow .35s var(--ease)}.ds-btn-action:hover{transform:translateY(-2px)}.ds-btn-action:active{transform:translateY(0)}.ds-btn-action{background:var(--lima);color:var(--pinho);box-shadow:0 12px 26px -14px rgba(0,0,0,.6)}.ds-btn-action:hover{background:var(--lima-h)}.ds-btn-action:focus-visible{outline:3px solid var(--lima);outline-offset:3px}"
+    },
+    {
+      "name": "Floating WhatsApp",
+      "kind": "button",
+      "refersTo": "fab",
+      "description": "Pinho pill with a 2px lima ring and lima icon; icon-only on desktop, label slides out on hover/focus; hides over the hero, the close and the held gallery.",
+      "html": "<a class=\"ds-fab\" href=\"#\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3.5 24.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z\"/><path d=\"M9 8.8c0 3 2.6 6 6 6.4l1.3-1.3-2-1-1 .9c-1.2-.5-2.3-1.6-2.8-2.8l.9-1-1-2z\"/></svg><span>Agendar avaliação</span></a>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-fab{display:inline-flex;align-items:center;background:var(--pinho);color:var(--on-pinho);border:2px solid var(--lima);font-family:var(--sans);font-weight:700;text-decoration:none;padding:16px;border-radius:999px;box-shadow:0 16px 34px -12px rgba(12,47,34,.55);transition:background-color .2s ease}.ds-fab svg{color:var(--lima);flex-shrink:0}.ds-fab span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .45s var(--ease),margin .45s var(--ease)}.ds-fab:hover{background:var(--pinho-h)}.ds-fab:is(:hover,:focus-visible) span{max-width:12em;margin-left:10px}.ds-fab:focus-visible{outline:3px solid var(--folha);outline-offset:3px}"
+    },
+    {
+      "name": "Link Strong",
+      "kind": "custom",
+      "refersTo": "link-strong",
+      "description": "Secondary path on light grounds.",
+      "html": "<a class=\"ds-link-strong\" href=\"#\">Ver avaliações das famílias no Google <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-link-strong{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:700;color:var(--folha);text-decoration:underline;text-decoration-color:rgba(40,111,71,.35);text-underline-offset:.22em;text-decoration-thickness:1.5px;padding:10px 0}.ds-link-strong:hover{text-decoration-color:currentColor}.ds-link-strong:focus-visible{outline:3px solid var(--folha);outline-offset:3px;border-radius:8px}"
+    },
+    {
+      "name": "Menu Sheet",
+      "kind": "nav",
+      "refersTo": "menu-link",
+      "description": "Below 1081px: full-screen pinho sheet; links are stops on a lima line, opened by a 46px round toggle.",
+      "html": "<div class=\"ds-sheet\"><button class=\"ds-toggle\" aria-label=\"Fechar menu\"><span class=\"bars\"><i></i><i></i></span></button><ol class=\"ds-mlist\"><li><a href=\"#\"><span class=\"tick\"></span>Sinais de atenção</a></li><li><a href=\"#\"><span class=\"tick\"></span>Como começar</a></li><li><a href=\"#\"><span class=\"tick\"></span>Especialidades</a></li></ol></div>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-sheet{position:relative;background:var(--pinho);color:var(--on-pinho);padding:72px 28px 32px}.ds-toggle{position:absolute;top:16px;right:20px;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line-dark);background:transparent;color:var(--on-pinho);cursor:pointer}.ds-toggle:hover{border-color:var(--lima);color:var(--lima)}.ds-toggle .bars{position:relative;display:block;width:18px;height:12px}.ds-toggle .bars i{position:absolute;left:0;top:5px;width:100%;height:2px;border-radius:2px;background:currentColor;transform:rotate(45deg)}.ds-toggle .bars i:last-child{transform:rotate(-45deg)}.ds-mlist{list-style:none;margin:0;position:relative;padding-left:34px}.ds-mlist::before{content:'';position:absolute;left:8px;top:8px;bottom:8px;width:3px;border-radius:3px;background:var(--lima)}.ds-mlist a{position:relative;display:flex;align-items:center;min-height:56px;text-decoration:none;color:var(--on-pinho);font-family:var(--display);font-weight:700;font-variation-settings:'wdth' 92;letter-spacing:-.015em;font-size:2rem;line-height:1.1;transition:color .2s ease}.ds-mlist a:hover{color:var(--lima)}.ds-mlist a:focus-visible{outline:3px solid var(--lima);outline-offset:3px;border-radius:8px}.ds-mlist .tick{position:absolute;left:-36px;top:50%;width:18px;height:3px;border-radius:3px;background:var(--lima);transform:translateY(-50%)}"
+    },
+    {
+      "name": "Header Nav",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Pinho glass header with short nav labels (ending in Onde) and the small lima action; a lima underline draws in on hover.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-brand\">Daphine Santana</span><a href=\"#\">Sinais</a><a href=\"#\">Especialidades</a><a href=\"#\">Dúvidas</a><a href=\"#\">Onde</a><a class=\"ds-cta\" href=\"#\">Agendar</a></nav>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-nav{display:flex;align-items:center;gap:2px;padding:12px 20px;background:rgba(18,63,46,.94);color:var(--on-pinho);font-family:var(--sans)}.ds-brand{font-family:var(--display);font-weight:700;font-size:1.22rem;letter-spacing:-.02em;font-variation-settings:'wdth' 88;margin-right:auto}.ds-nav a{font-size:.95rem;font-weight:600;text-decoration:none;padding:10px 12px;border-radius:10px;color:var(--on-pinho);transition:color .2s ease,background-color .2s ease}.ds-nav a{position:relative}.ds-nav a:not(.ds-cta)::after{content:'';position:absolute;left:12px;right:12px;bottom:5px;height:2px;border-radius:2px;background:var(--lima);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}.ds-nav a:hover{color:var(--lima)}.ds-nav a:not(.ds-cta):hover::after{transform:scaleX(1)}.ds-nav a:focus-visible{outline:3px solid var(--lima);outline-offset:3px}.ds-nav a.ds-cta{margin-left:12px;background:var(--lima);color:var(--pinho);border-radius:999px;padding:12px 18px;font-weight:700}.ds-nav a.ds-cta:hover{background:var(--lima-h);color:var(--pinho)}"
+    },
+    {
+      "name": "Sinais Row with Tick",
+      "kind": "custom",
+      "refersTo": "statement",
+      "description": "Ruled statement row; the folha tick scales in when the line reaches it.",
+      "html": "<ul class=\"ds-sinais\"><li><span class=\"ds-tick on\"></span>Demora para sentar, engatinhar ou andar</li><li><span class=\"ds-tick\"></span>Tropeça e cai com frequência</li></ul>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-sinais{list-style:none;margin:0;padding:0 0 0 56px;background:var(--nevoa)}.ds-sinais li{position:relative;font-family:var(--display);font-weight:500;font-variation-settings:'wdth' 92;font-size:1.6rem;line-height:1.3;letter-spacing:-.015em;color:var(--ink);padding-block:22px;border-bottom:1px solid var(--line)}.ds-sinais li:first-child{border-top:1px solid var(--line)}.ds-tick{position:absolute;left:-56px;top:50%;width:22px;height:3px;border-radius:3px;background:var(--folha);transform:translate(-11px,-50%) scaleX(0);transition:transform .5s var(--ease)}.ds-tick.on,.ds-sinais li:hover .ds-tick{transform:translate(-11px,-50%) scaleX(1)}"
+    },
+    {
+      "name": "Step Node",
+      "kind": "custom",
+      "refersTo": "step-node",
+      "description": "Numbered node on the pinho field; fills lima when the line arrives.",
+      "html": "<div class=\"ds-steps\"><span class=\"ds-node is-reached\">1</span><span class=\"ds-node\">2</span><span class=\"ds-node\">3</span></div>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-steps{display:flex;gap:40px;padding:32px;background:var(--pinho)}.ds-node{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--pinho);border:2px solid rgba(201,228,106,.35);font-family:var(--display);font-weight:700;font-size:1.5rem;color:var(--on-pinho);transition:background-color .5s var(--ease),color .5s var(--ease),border-color .5s var(--ease),transform .5s var(--ease)}.ds-node.is-reached,.ds-node:hover{background:var(--lima);color:var(--pinho);border-color:var(--lima);transform:scale(1.06)}"
+    },
+    {
+      "name": "FAQ Row",
+      "kind": "custom",
+      "refersTo": "statement",
+      "description": "Ruled details row with a rotating folha ring toggle.",
+      "html": "<details class=\"ds-faq\" open><summary>Preciso de encaminhamento médico?<span class=\"ds-faq-i\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></span></summary><p>Não. Você pode me chamar diretamente no WhatsApp.</p></details>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-faq{border-top:2px solid var(--ink);border-bottom:1px solid var(--line);background:var(--branco);font-family:var(--sans)}.ds-faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;font-family:var(--display);font-weight:600;font-variation-settings:'wdth' 92;font-size:1.3rem;color:var(--ink);letter-spacing:-.01em}.ds-faq summary::-webkit-details-marker{display:none}.ds-faq summary:hover{color:var(--folha)}.ds-faq summary:focus-visible{outline:3px solid var(--folha);outline-offset:3px;border-radius:8px}.ds-faq-i{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:2px solid var(--folha);color:var(--folha);transition:transform .45s var(--ease),background-color .3s ease,color .3s ease}.ds-faq[open] .ds-faq-i{transform:rotate(135deg);background:var(--folha);color:var(--branco)}.ds-faq p{padding:0 56px 26px 0;color:var(--muted)}"
+    },
+    {
+      "name": "Trace Line",
+      "kind": "custom",
+      "refersTo": "path-word",
+      "description": "The signature stroke with ghost echoes, a word on the path and the dotted trail ahead (static snapshot).",
+      "html": "<div class=\"ds-trace\"><svg viewBox=\"0 0 360 120\" width=\"360\" height=\"120\" aria-hidden=\"true\"><path id=\"dsp\" d=\"M10 100 C90 100 140 30 220 40 S330 90 350 20\" class=\"g\" transform=\"translate(-13 9)\" opacity=\".34\"/><path d=\"M350 20 C356 8 358 4 358 2\" class=\"t\"/><path d=\"M10 100 C90 100 140 30 220 40 S330 90 350 20\" class=\"l\"/><text dy=\"-10\"><textPath href=\"#dsp\" startOffset=\"20\">sentar</textPath></text><circle cx=\"350\" cy=\"20\" r=\"5.5\"/></svg></div>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-trace{background:var(--pinho);padding:16px;display:inline-block}.ds-trace .l{fill:none;stroke:var(--lima);stroke-width:3;stroke-linecap:round}.ds-trace .g{fill:none;stroke:var(--lima);stroke-width:1.6}.ds-trace circle{fill:var(--lima)}.ds-trace text{font-family:var(--display);font-weight:600;font-size:15px;fill:var(--lima);font-variation-settings:'wdth' 80}.ds-trace .t{fill:none;stroke:var(--lima);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:0 10;opacity:.3}"
+    },
+    {
+      "name": "Specialty Row",
+      "kind": "custom",
+      "refersTo": "line-icon-specialty",
+      "description": "Ruled specialty row: folha line icon before the name, a stop-ring note under it, description and audience columns; no pills.",
+      "html": "<ul class=\"ds-spec\"><li><div><h3><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"4.4\" r=\"2.2\"/><path d=\"M5.8 5.6 C7.6 7.9 9.7 9 12 9 C14.3 9 16.4 7.9 18.2 5.6\"/><path d=\"M12 7.6 C12.2 9.4 12.2 11 12 12.6\"/><path d=\"M12 12.6 L8.8 14.6 L7.6 17.2\"/><path d=\"M12 12.6 L15.2 14.6 L16.4 17.2\"/></svg>Psicomotricidade</h3><p class=\"mark\">Mais procurado</p></div><p>Desenvolvimento global trabalhado pelo corpo e pela brincadeira.</p><span class=\"for\">Para todas as idades</span></li></ul>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-spec{list-style:none;margin:0;padding:0 24px;background:var(--nevoa);border-top:2px solid var(--ink);font-family:var(--sans)}.ds-spec li{display:grid;grid-template-columns:1.05fr 1fr 10rem;gap:10px 32px;align-items:baseline;padding-block:24px;border-bottom:1px solid var(--line)}.ds-spec h3{display:flex;align-items:center;gap:14px;margin:0;font-family:var(--display);font-weight:700;font-variation-settings:'wdth' 92;font-size:1.6rem;letter-spacing:-.02em;color:var(--ink)}.ds-spec svg{width:40px;height:40px;flex-shrink:0;fill:none;stroke:var(--folha);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.ds-spec .mark{display:flex;align-items:center;gap:9px;margin:8px 0 0 54px;font-size:.84rem;font-weight:700;color:var(--folha)}.ds-spec .mark::before{content:'';width:10px;height:10px;border-radius:50%;border:2.5px solid var(--folha)}.ds-spec p{margin:0;color:var(--muted)}.ds-spec .for{font-size:.9rem;font-weight:700;color:var(--folha);text-align:right}"
+    },
+    {
+      "name": "Clinic Card over Map",
+      "kind": "card",
+      "refersTo": "clinic-card",
+      "description": "Pinho legend card hanging over the top-left of the ink-washed map.",
+      "html": "<div class=\"ds-clinic\"><div class=\"card\"><h3>Clínica em Mogi das Cruzes</h3><p class=\"addr\">R. Manuel de Oliveira, 269<br>Torre 2, Sala 107</p><p class=\"sub\">Vila Mogilar, Mogi das Cruzes – SP</p><a href=\"#\">Abrir no Google Maps</a></div><div class=\"map\"></div></div>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-clinic{background:var(--menta);padding:24px;font-family:var(--sans)}.ds-clinic .card{position:relative;z-index:2;width:min(380px,calc(100% - 48px));margin:0 0 -96px 24px;padding:26px 28px 22px;border-radius:18px;background:var(--pinho);color:var(--on-pinho);box-shadow:0 26px 48px -28px rgba(8,30,21,.65)}.ds-clinic h3{margin:0 0 14px;font-family:var(--display);font-size:1.3rem;font-variation-settings:'wdth' 92}.ds-clinic .addr{margin:0;font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.25;letter-spacing:-.015em}.ds-clinic .sub{margin:8px 0 0;color:var(--on-pinho-muted);font-size:.96rem}.ds-clinic a{display:inline-block;margin-top:12px;font-weight:700;color:var(--lima);text-decoration:underline;text-decoration-color:rgba(201,228,106,.45);text-underline-offset:.28em}.ds-clinic a:hover{text-decoration-color:var(--lima)}.ds-clinic a:focus-visible{outline:3px solid var(--lima);outline-offset:3px;border-radius:8px}.ds-clinic .map{aspect-ratio:4/3;border-radius:22px;background:linear-gradient(135deg,#cfe0cf,#b9d2bd)}"
+    },
+    {
+      "name": "Way Home Ring (404)",
+      "kind": "button",
+      "refersTo": "button-ring",
+      "description": "The only non-WhatsApp action: a lima ring, never a fill, beside the lima WhatsApp action on pinho.",
+      "html": "<div class=\"ds-ground\"><a class=\"ds-ring\" href=\"#\">Voltar ao início</a><a class=\"ds-wa\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z\"/></svg>Falar com a Daphine</a></div>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-ground{display:flex;flex-wrap:wrap;gap:12px 14px;background:var(--pinho);padding:24px;font-family:var(--sans)}.ds-ring,.ds-wa{display:inline-flex;align-items:center;gap:11px;min-height:62px;padding:20px 32px;border-radius:999px;font-weight:700;font-size:1.1rem;line-height:1;text-decoration:none;transition:transform .35s var(--ease),box-shadow .35s var(--ease),color .2s ease,background-color .2s ease}.ds-ring{color:var(--on-pinho);box-shadow:inset 0 0 0 1.5px rgba(201,228,106,.55)}.ds-ring:hover{color:var(--lima);box-shadow:inset 0 0 0 1.5px var(--lima);transform:translateY(-2px)}.ds-wa{background:var(--lima);color:var(--pinho);box-shadow:0 12px 26px -14px rgba(0,0,0,.6)}.ds-wa:hover{background:var(--lima-h);transform:translateY(-2px)}.ds-ring:focus-visible,.ds-wa:focus-visible{outline:3px solid var(--lima);outline-offset:3px}"
+    },
+    {
+      "name": "Footer Credit",
+      "kind": "custom",
+      "refersTo": "signature-pill",
+      "description": "Developer credit: Chibo Dev pill with the red kanji stamp and @chibodev pill; each wears its own brand only on hover.",
+      "html": "<div class=\"ds-foot\"><span class=\"lbl\">Desenvolvido por</span><a href=\"#\"><svg class=\"stamp\" viewBox=\"0 0 100 100\" aria-hidden=\"true\"><rect width=\"100\" height=\"100\" fill=\"#C9171E\"/><path d=\"M9 9H91V91H9Z M68 18L30 32\" stroke=\"#fff\" stroke-width=\"6\" fill=\"none\"/></svg><span class=\"nm\">Chibo Dev</span></a></div>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-foot{display:flex;align-items:center;gap:11px;background:#0C2F22;padding:24px;font-family:var(--sans);font-size:.78rem;color:var(--on-pinho-muted)}.ds-foot a{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line-dark);color:var(--on-pinho);text-decoration:none;transition:transform .18s ease-out,box-shadow .18s ease-out,border-color .18s ease-out,background-color .18s ease-out}.ds-foot .stamp{width:17px;height:17px;transform:rotate(-1.4deg);transition:transform .25s var(--ease)}.ds-foot .nm{font-weight:600;transition:color .18s ease-out}.ds-foot a:hover{transform:translateY(-2px);box-shadow:0 8px 18px -10px rgba(0,0,0,.5);border-color:#C9171E;background:rgba(201,23,30,.14)}.ds-foot a:hover .nm{color:#EF5B60}.ds-foot a:hover .stamp{transform:rotate(-6deg) scale(1.08)}.ds-foot a:focus-visible{outline:3px solid var(--lima);outline-offset:3px}"
+    },
+    {
+      "name": "Growing Child",
+      "kind": "custom",
+      "refersTo": "path-word",
+      "description": "The child at the head of the line (walking stage shown): ground-filled head and torso, 2.2 stick limbs, far limbs at .55; folha on light, lima on pinho.",
+      "html": "<div class=\"ds-kid\"><div class=\"light\"><svg viewBox=\"-32 -64 64 72\" width=\"96\" height=\"108\" aria-hidden=\"true\"><g opacity=\".55\"><path d=\"M-0.76 -32.7 L-7.66 -31.3 L-9.06 -37.7\"/><path d=\"M-1.7 -19.4 L-0.82 -9.14 L-4.15 -1.1\"/></g><path class=\"f\" d=\"M2.83 -37.29 C5.21 -37 6.63 -35.42 7.01 -33.56 C7.66 -30.65 7.86 -27.41 7.28 -24.25 C6.45 -20.02 3.56 -16.95 -0.05 -17.09 C-2.85 -17.24 -5.36 -18.15 -6.31 -20.28 C-7.08 -22.19 -6.54 -25.75 -5.58 -28.65 C-4.28 -32.72 -1.14 -37.78 2.83 -37.29 Z\"/><circle class=\"f\" cx=\"3.29\" cy=\"-44.29\" r=\"8.6\"/><path d=\"M1.79 -52.69 C1.39 -55.39 4.39 -56.49 5.79 -54.89\"/><circle cx=\"8.29\" cy=\"-43.39\" r=\"1.2\" class=\"e\"/><path d=\"M-0.3 -19.4 L3.33 -9.76 L4.15 -1.1\"/><path d=\"M3.56 -31.76 L11.16 -30.56 L13.56 -36.16\"/><path d=\"M-30 0 H30\" class=\"ln\"/></svg></div><div class=\"dark\"><svg viewBox=\"-32 -64 64 72\" width=\"96\" height=\"108\" aria-hidden=\"true\"><g opacity=\".55\"><path d=\"M-0.76 -32.7 L-7.66 -31.3 L-9.06 -37.7\"/><path d=\"M-1.7 -19.4 L-0.82 -9.14 L-4.15 -1.1\"/></g><path class=\"f\" d=\"M2.83 -37.29 C5.21 -37 6.63 -35.42 7.01 -33.56 C7.66 -30.65 7.86 -27.41 7.28 -24.25 C6.45 -20.02 3.56 -16.95 -0.05 -17.09 C-2.85 -17.24 -5.36 -18.15 -6.31 -20.28 C-7.08 -22.19 -6.54 -25.75 -5.58 -28.65 C-4.28 -32.72 -1.14 -37.78 2.83 -37.29 Z\"/><circle class=\"f\" cx=\"3.29\" cy=\"-44.29\" r=\"8.6\"/><path d=\"M1.79 -52.69 C1.39 -55.39 4.39 -56.49 5.79 -54.89\"/><circle cx=\"8.29\" cy=\"-43.39\" r=\"1.2\" class=\"e\"/><path d=\"M-0.3 -19.4 L3.33 -9.76 L4.15 -1.1\"/><path d=\"M3.56 -31.76 L11.16 -30.56 L13.56 -36.16\"/><path d=\"M-30 0 H30\" class=\"ln\"/></svg></div></div>",
+      "css": ":host{--pinho:#123F2E;--pinho-h:#1C4D39;--folha:#286F47;--lima:#C9E46A;--lima-h:#D7EE84;--nevoa:#F1F5EF;--branco:#FBFCFA;--menta:#DDEBDD;--ink:#10241B;--muted:#4A6155;--on-pinho:#EEF4EC;--on-pinho-muted:#B7CDBE;--line:#CFDCCF;--line-dark:rgba(201,228,106,.22);--ease:cubic-bezier(.16,1,.3,1);--display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;--sans:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',ui-sans-serif,system-ui,sans-serif}.ds-kid{display:flex}.ds-kid>div{padding:16px 24px}.ds-kid .light{background:var(--nevoa);color:var(--folha);--fill:var(--nevoa)}.ds-kid .dark{background:var(--pinho);color:var(--lima);--fill:var(--pinho)}.ds-kid svg{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;overflow:visible}.ds-kid .f{fill:var(--fill)}.ds-kid .e{fill:currentColor;stroke:none}.ds-kid .ln{stroke-width:3}"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Traço do Movimento",
+    "overview": "**Creative North Star: \"O Traço do Movimento\"**\n\nDevelopment is movement, so the site is drawn by one continuous line. It starts as a lima dot at the bottom of the hero, loops around a real cutout of Daphine, and then, section by section, the reader's scroll draws it down the page as a single stroke with a single head. It touches every place where something happens: each warning sign gets a tick, each specialty gets a tick, each of the three steps gets a lit node, each city stop gets a dot. It ends in a loop around the final WhatsApp button. At its head rides a small line-drawn child who grows up as the page goes on: sitting in the hero, crawling through the signs, walking from the first steps to Daphine's story, running from the reviews to the final button. The visual vocabulary borrows from chronophotography and movement notation. Fading ghost echoes trail the stroke the way Marey's plates trail a moving body, a dotted trail marks the route still ahead, milestone words (sentar, engatinhar, ficar em pé, andar, pular, equilibrar) sit on the path itself, and real photographs of the practitioner are cut out and locked onto the line as photomontage.\n\nThe world is green by brand commitment. The portrait sections (the hero, the close and /links) are a painted studio: a mottled pinho canvas with a soft light behind the sitter, a vignette and a floor shadow, so Daphine is photographed into the world rather than pasted onto a flat fill. The same studio carries the share image and the 404 page. A deep pinho field owns the opening, the three-step start, the families' reviews and the close. Light grounds in névoa, branco and menta rotate through the reading in between, and no two neighbouring sections share a ground. Type is a confident, slightly condensed grotesque with tight negative tracking, set against a body face built for legibility, because the reader is a worried parent on a phone. There is no warm accent. The WhatsApp action is marked by inversion instead: it is always the opposite of the ground it sits on, lima on pinho and pinho on light, so the one thing to press is the one thing that does not match its surroundings.\n\nThe density is calm: one idea per section, generous vertical rhythm, and long ruled lists instead of card grids. The system rejects the category default of the therapy and clinic website: cream grounds, italic serifs, eyebrow labels above headings, and grids of icon cards.",
+    "keyCharacteristics": [
+      "One scroll-drawn line that runs from the hero to the final button as one stroke with one head, unbroken across section edges, with a dotted trail showing the route ahead.",
+      "A line-drawn child rides the head of the line and grows from sitting to running as the page goes on.",
+      "Pinho at the opening, the start, the reviews and the close, with rotating light grounds between; folha line on light grounds, lima line on pinho.",
+      "The WhatsApp action always inverts its ground (lima on pinho, pinho on light) and is never coral or any warm colour; it is the only filled button.",
+      "Portrait sections, the share image and the 404 sit on a painted, lit studio canvas instead of flat pinho.",
+      "Real alpha cutouts of Daphine set flush on a section edge or bled off the viewport.",
+      "Ruled lists, ticks, nodes, stops and hand-drawn line icons instead of cards and icon tiles.",
+      "The \"O espaço\" gallery pins under the header and turns vertical scroll into a sideways film.",
+      "Content enters as the line reaches it; reduced motion and no-JS show the finished drawing at once."
+    ],
+    "rules": [
+      {
+        "name": "The Inverted Action Rule",
+        "body": "The WhatsApp action always takes the opposite of its ground. On pinho grounds and in the header it is lima with pinho text and icon (hover lima-h). On light grounds it is pinho with on-pinho text and a lima icon (hover pinho-h). The floating button is pinho with a 2px lima ring and a lima icon, so it reads on both. The switch comes from the ground class, never by hand. A WhatsApp action is never coral, red or any warm colour, and no third action colour exists.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Greens Rule",
+        "body": "The line, its trail and the child riding it are folha on light grounds and lima on pinho, switched by the field class, never by hand. Ghost echoes are always lima, at low opacity.",
+        "section": "colors"
+      },
+      {
+        "name": "The Field Change Rule",
+        "body": "Adjacent sections never share a ground, so each edge the line crosses is visible. Pinho returns at four beats (the opening, the start, the reviews, the close); the light grounds névoa, branco and menta rotate in between.",
+        "section": "colors"
+      },
+      {
+        "name": "The Guest Colour Rule",
+        "body": "The red of the Chibo Dev stamp and the Instagram magenta live only inside the developer credit in the footer and on the 404. They are the credit's own brand marks, scoped to it, and never enter the site's palette, its actions or its line.",
+        "section": "colors"
+      },
+      {
+        "name": "The Width Axis Rule",
+        "body": "Headings run the wdth axis below 100: 92 for headings, 88–90 for the brand name and small display text, 80 for words on the path. Never set display text at full width.",
+        "section": "typography"
+      },
+      {
+        "name": "The Heading Starts Cold Rule",
+        "body": "A section opens with its heading. There is no small uppercase label, kicker or eyebrow above an h1 or h2. Uppercase tracked text exists only as footer column heads.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Highlight Rule",
+        "body": "A heading can colour at most one word or phrase (folha on light, lima on pinho), and that word carries the meaning of the sentence (\"movimento\", \"hoje\", \"curva\").",
+        "section": "typography"
+      },
+      {
+        "name": "The Clear Copy Rule",
+        "body": "The line never crosses a heading, a paragraph, a list row's text or the WhatsApp action. It travels in the margins, through figures and around anchors. The final loop circles the button without touching it, and the button is lifted above the stroke.",
+        "section": "layout"
+      },
+      {
+        "name": "The Figure Carries the Depth Rule",
+        "body": "Lists, rows and sections never get shadows. If something needs to come forward, it is the person, the action, or the one card that hangs over the map.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** open every section with its heading, set in Bricolage Grotesque at wdth 92 with negative tracking.",
+      "**Do** make every WhatsApp action invert its ground: lima with pinho text on pinho and in the header, pinho with on-pinho text and a lima icon on light, and keep it the only filled button.",
+      "**Do** give each section a ground different from its neighbours (pinho, névoa, branco, menta), and let the field switch the line, its trail and the child between folha and lima.",
+      "**Do** match each section's `data-in` to the previous `data-out` at both sizes using the `L` / `R` lanes, and pin margin runs to a lane with `data-pt=\"L y\"` rather than a hand-tuned fraction.",
+      "**Do** let the phone route sweep across the screen through the gaps between blocks, with mobile-only anchors, rather than parking it on one edge.",
+      "**Do** keep the child identical across stages (head, curl, forward eye, ground-filled bean torso, 2.2 stick limbs, far limbs at 0.55) and let it grow only forward through the page.",
+      "**Do** set portrait sections, the share image and the 404 on the studio canvas and place its light (`--sx`, `--sy`) behind the sitter.",
+      "**Do** add a breakpoint only for a device class that actually breaks, and change only what broke.",
+      "**Do** tie every tick, node or dot to a real item of content the reader passes.",
+      "**Do** set cutouts flush on a section edge or bleed them off the viewport, and ship each raster with its provenance sidecar.",
+      "**Do** present lists as ruled rows (1px line between rows, 2px ink rule on top) rather than boxes, with the folha line icon beside the text.",
+      "**Do** quote reviews verbatim from real, authorised sources and name where they come from.",
+      "**Do** keep the finished line visible and all content shown at once under reduced motion and without JS."
+    ],
+    "donts": [
+      "**Don't** put eyebrows, kickers or small uppercase labels above headings.",
+      "**Don't** build grids of icon cards or put icons in tiles or pills; icons are folha line strokes beside text.",
+      "**Don't** make a WhatsApp action coral, red or any warm colour, or introduce a third action colour; the action is marked by inversion, not by hue.",
+      "**Don't** let the credit's red or magenta leave the developer credit.",
+      "**Don't** let the line cross a heading, a paragraph, list text or the WhatsApp action.",
+      "**Don't** give the child a face, clothes, a colour of its own or a different head from stage to stage, or let it slide without its limbs moving.",
+      "**Don't** show the cut edge of a cutout photo inside the viewport, or use generated imagery in place of real photographs of Daphine and the space.",
+      "**Don't** invent testimonials, ratings, counts or years of experience.",
+      "**Don't** add shadows to rows, lists or sections; depth belongs to the figure, the action and the map's legend card.",
+      "**Don't** fall back to the category default of cream grounds and italic serifs."
+    ]
+  }
+}

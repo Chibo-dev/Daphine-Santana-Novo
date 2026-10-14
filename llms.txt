@@ -1,0 +1,34 @@
+# Espaço Daphine Santana
+
+> Site de Daphine Santana, psicomotricista (CREF 154086-G/SP), e do Espaço Daphine Santana, em Mogi das Cruzes (SP). Psicomotricidade, intervenção precoce e psicomotricidade aquática para crianças e famílias, com avaliação e plano individual, na clínica ou em casa, em todo o Alto Tietê. O agendamento é feito pelo WhatsApp (11) 95421-4090.
+
+O Espaço Daphine Santana reúne sete especialidades sob um mesmo cuidado integrado: Psicomotricidade, Avaliação Motora Infantil, Treinamento Físico Adaptado, Psicomotricidade Aquática, Intervenção Precoce, Gerontopsicomotricidade e Acompanhamento Nutricional. Cada acompanhamento nasce de uma avaliação inicial e segue um plano individual, com metas e frequência revisadas junto com a família.
+
+A clínica fica na R. Manuel de Oliveira, 269 - Torre 2, Sala 107 (Helbor Dual Patteo Mogilar), Vila Mogilar, Mogi das Cruzes - SP, CEP 08773-130. O atendimento domiciliar cobre todo o Alto Tietê: Mogi das Cruzes, Suzano, Poá, Itaquaquecetuba, Ferraz de Vasconcelos, Arujá, Guararema e cidades vizinhas.
+
+O atendimento é particular, com recibo para reembolso quando o convênio oferece esse benefício; cooperados CoopMed contam com condições especiais em serviços selecionados. A própria Daphine responde no WhatsApp, normalmente em poucas horas. No Google, o espaço tem nota 5,0.
+
+## Página principal
+
+- [Início](https://daphinesantana.com.br/): apresentação do trabalho e caminho para agendar a avaliação inicial.
+- [Sinais de atenção](https://daphinesantana.com.br/#sinais): seis sinais no desenvolvimento da criança que merecem orientação.
+- [O que é psicomotricidade](https://daphinesantana.com.br/#psicomotricidade): como o movimento, a brincadeira e o vínculo ajudam a criança a se desenvolver.
+- [Como começar](https://daphinesantana.com.br/#comecar): os três passos, da conversa no WhatsApp ao plano personalizado.
+- [Especialidades](https://daphinesantana.com.br/#especialidades): as sete frentes de cuidado, com a descrição e o público de cada uma.
+- [Sobre a Daphine](https://daphinesantana.com.br/#sobre): quem é Daphine Santana e os diferenciais do espaço.
+- [Depoimentos](https://daphinesantana.com.br/#depoimentos): avaliações de famílias publicadas no Google.
+- [O espaço](https://daphinesantana.com.br/#espaco): fotos da recepção, da sala de psicomotricidade e das demais áreas da clínica.
+- [Dúvidas](https://daphinesantana.com.br/#duvidas): avaliação inicial, atendimento em casa, psicomotricidade aquática, duração do acompanhamento, convênios e agendamento.
+- [Onde atendemos](https://daphinesantana.com.br/#onde): endereço da clínica, mapa e cidades com atendimento em casa.
+- [Agendar](https://daphinesantana.com.br/#agendar): o próximo passo, uma conversa no WhatsApp.
+- [Links](https://daphinesantana.com.br/links/): página de links da bio do Instagram (agendar, conhecer o trabalho, como chegar).
+
+## Contato
+
+- [WhatsApp (11) 95421-4090](https://wa.me/5511954214090?text=Ol%C3%A1%2C%20Daphine!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.): canal de agendamento; a própria Daphine responde e já orienta na primeira conversa.
+- [Instagram @daphine.santana](https://instagram.com/daphine.santana): atividades, bastidores e orientações sobre desenvolvimento infantil.
+- [Google Maps](https://www.google.com/maps/place/Daphine+Santana+-+Treinamento+f%C3%ADsico+adaptado+e+psicomotricidade/@-23.5097871,-46.1933144,17z/data=!4m6!3m5!1s0x94cdd9001f81d051:0x2a70232c202fc536!8m2!3d-23.5097871!4d-46.1933144!16s%2Fg%2F11vszfbxrr): a clínica em Mogi das Cruzes, listada como "Daphine Santana - Treinamento físico adaptado e psicomotricidade".
+
+## Optional
+
+- [Conteúdo completo](https://daphinesantana.com.br/llms-full.txt): todo o texto do site em markdown, com as especialidades, os depoimentos e as respostas das dúvidas frequentes.

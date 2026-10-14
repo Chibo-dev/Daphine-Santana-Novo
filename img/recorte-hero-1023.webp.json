@@ -1,0 +1,4 @@
+{
+  "prompt": "Cutout of Daphine Santana's studio portrait (cream suit, seated on a brown leather armchair) from the client's photo daphine-hero-1023.webp. Person matte from macOS Vision VNGenerateForegroundInstanceMaskRequest, united with a hand-traced polygon of the armchair (feathered 2.6px to match the photo's soft focus), with 70px alpha dissolves where the original frame cut the chair and leg at the left/right edges. No generative content.",
+  "createdAt": "2026-10-13T23:26:12.298Z"
+}

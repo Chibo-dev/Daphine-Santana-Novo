@@ -1,0 +1,4 @@
+{
+  "prompt": "Procedural painted studio backdrop in pinho tones, rendered with ffmpeg: two octaves of uniform noise (8x5 and 26x16 cells) upscaled bicubic to 1600x1000, gaussian blurred (sigma 110 / 36), mixed 75/25, normalized, mapped to rgb(11..31, 44..84, 32..62), plus 3% uniform grain. No photographic or generative source.",
+  "createdAt": "2026-10-13T23:26:12.330Z"
+}

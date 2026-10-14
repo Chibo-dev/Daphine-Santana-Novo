@@ -1,0 +1,40 @@
+# robots.txt · Espaço Daphine Santana · https://daphinesantana.com.br/
+# O site é público: buscadores e assistentes de IA são bem-vindos.
+# Resumo para IAs: /llms.txt · conteúdo completo: /llms-full.txt
+
+# Buscadores e assistentes de IA, nomeados um a um para deixar claro que podem ler o site.
+# (Um robô nomeado segue só o seu grupo, por isso os bloqueios abaixo se repetem aqui.)
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: DuckAssistBot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+# arquivos internos do repositório, que não são páginas do site
+# (os bloqueios vêm antes do Allow para valer também em leitores que usam a primeira regra que casa)
+Disallow: /.impeccable/
+Disallow: /DESIGN.md
+Disallow: /PRODUCT.md
+Disallow: /README.md
+Disallow: /img/*.json
+Allow: /
+
+# Todos os demais robôs
+User-agent: *
+Disallow: /.impeccable/
+Disallow: /DESIGN.md
+Disallow: /PRODUCT.md
+Disallow: /README.md
+Disallow: /img/*.json
+Allow: /
+
+Sitemap: https://daphinesantana.com.br/sitemap.xml

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://daphinesantana.com.br/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image><image:loc>https://daphinesantana.com.br/img/recorte-hero-1023.webp</image:loc></image:image>
+    <image:image><image:loc>https://daphinesantana.com.br/img/espaco-sala-800.webp</image:loc></image:image>
+    <image:image><image:loc>https://daphinesantana.com.br/img/espaco-terapia-1040.webp</image:loc></image:image>
+    <image:image><image:loc>https://daphinesantana.com.br/img/recorte-sobre-1023.webp</image:loc></image:image>
+    <image:image><image:loc>https://daphinesantana.com.br/img/espaco-recepcao-800.webp</image:loc></image:image>
+    <image:image><image:loc>https://daphinesantana.com.br/img/espaco-treino-800.webp</image:loc></image:image>
+    <image:image><image:loc>https://daphinesantana.com.br/img/espaco-infantil-800.webp</image:loc></image:image>
+    <image:image><image:loc>https://daphinesantana.com.br/img/espaco-acolhe-800.webp</image:loc></image:image>
+    <image:image><image:loc>https://daphinesantana.com.br/img/espaco-leitura-800.webp</image:loc></image:image>
+    <image:image><image:loc>https://daphinesantana.com.br/img/recorte-cta-1023.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://daphinesantana.com.br/links/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <image:image><image:loc>https://daphinesantana.com.br/img/recorte-hero-600.webp</image:loc></image:image>
+  </url>
+</urlset>
