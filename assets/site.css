@@ -116,6 +116,14 @@ svg.trace.front{z-index:3}
 .field-pinho .trace path.trail{stroke:var(--lima);opacity:.3}
 @media (prefers-reduced-motion:reduce){.trace path.trail{display:none}}
 .trace .pen{fill:var(--folha)}
+/* the child (at the head of the stroke) replaces the pen dot. trace.js crossfades the stages (opacity, .35s)
+   and sets the stroke width in px (2.2 rig units at one px-per-unit; strokes are non-scaling) */
+.trace .baby-stage{opacity:0}
+.has-crawler .trace .pen{display:none}
+.trace .baby{color:var(--folha);--baby-fill:var(--nevoa);fill:none;stroke:currentColor;stroke-width:1.375px;stroke-linecap:round;stroke-linejoin:round}
+.field-branco .trace .baby{--baby-fill:var(--branco)}
+.field-menta .trace .baby{--baby-fill:var(--menta)}
+.field-pinho .trace .baby{color:var(--lima);--baby-fill:var(--pinho)}
 .field-pinho .trace .pen{fill:var(--lima)}
 .trace text{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.01em;fill:var(--folha);
   font-variation-settings:"wdth" 80;opacity:0;transition:opacity .6s ease}
@@ -326,10 +334,11 @@ svg.trace.front{z-index:3}
 .route-sub{color:var(--muted);max-width:48ch}
 .stops-wrap{position:relative;margin:48px 0 56px}
 .stops{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:64px 12px}
-.stops li{position:relative;display:flex;flex-direction:column-reverse;justify-content:flex-start;align-items:center;text-align:center;gap:10px;
+/* every city name sits under its stop: the line threads the stops, and the child running on it never passes under
+   a name; the stops in even places sit a little lower, a gentle wave */
+.stops li{position:relative;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;gap:10px;
   font-weight:700;color:var(--ink);font-size:.95rem;line-height:1.25;white-space:nowrap}
-.stops li:nth-child(even){flex-direction:column}
-.stops li:nth-child(even){transform:translateY(34px)}
+.stops li:nth-child(even){transform:translateY(16px)}
 .stop-dot{width:16px;height:16px;border-radius:50%;background:var(--menta);border:3px solid var(--folha);
   transition:background-color .4s var(--ease),transform .4s var(--ease)}
 .stop-dot.is-reached{background:var(--folha);transform:scale(1.15)}
@@ -504,19 +513,16 @@ svg.trace.front{z-index:3}
   .clinic-info{width:auto;margin:0 14px -56px;padding:22px 22px 18px}
   .clinic-map iframe{top:0;height:100%}
   /* the route snakes down in two columns, like the desktop one turned on its side:
-     row by row, left-right then right-left, round U-turns in the margins; names alternate below/above */
+     row by row, left-right then right-left, round U-turns in the margins; every name below its stop */
   .stops-wrap{margin:36px 0 64px}
   .stops{grid-template-columns:1fr 1fr;gap:24px 0}
-  .stops li,.stops li:nth-child(even){gap:10px;white-space:nowrap;font-size:.92rem;line-height:18px;transform:none}
-  .stops li:nth-child(odd){flex-direction:column;padding-top:28px}
-  .stops li:nth-child(even){flex-direction:column-reverse;padding-bottom:28px}
+  .stops li,.stops li:nth-child(even){gap:10px;white-space:nowrap;font-size:.92rem;line-height:18px;transform:none;padding-top:28px}
   .stops li:nth-child(1){grid-area:1/1}.stops li:nth-child(2){grid-area:1/2}.stops li:nth-child(3){grid-area:2/2}
   .stops li:nth-child(4){grid-area:2/1}.stops li:nth-child(5){grid-area:3/1}.stops li:nth-child(6){grid-area:3/2}
   .stops li:nth-child(7){grid-area:4/2}
   /* each dot sits 36px down its 72px cell; the next row is 96px below */
   .pt-u{top:84px}
-  .pt-u-r{left:calc(50% + clamp(44px,15vw,64px))}
-  .pt-u-l{left:calc(50% - clamp(44px,15vw,64px))}
+  .pt-u-r{left:calc(50% + clamp(52px,17vw,64px))}
   .pt-row{top:36px;left:50%}
   .final-copy{padding-bottom:24px}
   .final-note{margin-top:76px}
