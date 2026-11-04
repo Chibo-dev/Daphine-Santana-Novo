@@ -1,0 +1,11 @@
+{
+  "name": "daphine-santana-site",
+  "private": true,
+  "description": "Site do Espaço Daphine Santana. Arquivos estáticos; o build (Vercel) embute o CSS e minifica o trace.js em dist/.",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

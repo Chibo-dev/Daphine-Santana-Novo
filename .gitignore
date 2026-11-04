@@ -8,3 +8,7 @@
 .impeccable/review/
 .impeccable/decision/
 .impeccable/questions/
+
+# build (Vercel gera dist/ a cada deploy)
+node_modules/
+dist/

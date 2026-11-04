@@ -240,8 +240,10 @@ A forest-green world of one deep field and three pale reading grounds, drawn in 
 
 ## Typography
 
-**Display Font:** Bricolage Grotesque (variable: opsz 12–96, wdth 75–100, wght 400–800), with ui-sans-serif and system-ui as fallback
-**Body Font:** Atkinson Hyperlegible Next (Atkinson Hyperlegible fallback), then ui-sans-serif and system-ui
+**Display Font:** Bricolage Grotesque (variable: opsz 12–96, wdth 80–100, wght 500–700, the ranges the site uses), with ui-sans-serif and system-ui as fallback
+**Body Font:** Atkinson Hyperlegible Next (variable wght 400–700, plus the 400 italic), then ui-sans-serif and system-ui
+
+**Delivery:** Both faces are self-hosted in `assets/fonts/` as woff2 (SIL OFL, licences beside them), cut to Google Fonts' Latin range (Basic Latin, Latin-1, the general punctuation the copy uses, €, ™, ↑↓, −) and to the axis ranges above with fontTools (`subset` with kern, liga, calt, ccmp, locl, mark, mkmk and no hinting, then `varLib.instancer`). Bricolage and the upright Atkinson are preloaded by every page; all faces use `font-display: swap`. A new weight or width outside these ranges needs a new cut.
 
 **Character:** A grotesque that is lively but slightly condensed, set tight and heavy for headlines, against a body face designed for low-vision legibility. The headlines bring the playful, premium side of the brand; the body face keeps the parent reading.
 
@@ -325,7 +327,7 @@ Shapes are soft and rounded, but the layout stays rectilinear: rows are separate
 The sinais and especialidades carry their own hand-drawn line icons (the si-* and sp-* sets), drawn for this site on a 24-unit grid with round caps and joins and a fine single stroke, lighter than the 1.8 interface icons. They are folha, sit at the start of their row beside the text (38px for sinais, 40px for specialties, about 28–30px on phones), and draw small figures and objects from the work itself: a body in balance, a magnifier over a wave, a clipboard, water. Interface icons (WhatsApp, arrows, pin, home, Instagram, shield) stay a separate, plainer set.
 
 ### Cutout Photomontage
-- Portraits of Daphine are alpha cutouts from the client's own photographs. The background is removed with macOS Vision (VNGenerateForegroundInstanceMaskRequest) and exported as alpha WebP at 600w and 1023w. Each raster ships with a `.json` provenance sidecar stating the source and "No generative content".
+- Portraits of Daphine are alpha cutouts from the client's own photographs. The background is removed with macOS Vision (VNGenerateForegroundInstanceMaskRequest) and exported as alpha WebP at 600w and 1023w; the srcset sizes in between (480, 540, 700, 880w, plus 320w of the hero for /links/) are downscaled from the 1023w file, and each `sizes` attribute follows the figure's real rendered width. Each raster ships with a `.json` provenance sidecar stating the source and "No generative content".
 - The hero cutout keeps the leather armchair: the Vision person matte is united with a hand-traced polygon of the chair (feathered to match the photo's focus), and where the original frame cut the chair and leg at the sides the alpha dissolves over 70px instead of stopping on a hard edge.
 - The studio canvas behind the portraits is a texture, not a photograph, and ships with the same `.json` provenance sidecar.
 - A cutout either sits flush on a section edge (the hero figure is bottom-aligned to the hero's bottom; the close figure sits on the bottom of the final section) or bleeds off the viewport (the sobre figure runs off the right edge and below the section with a negative bottom margin). The place where the photo's frame cuts the body must never be visible.
@@ -390,6 +392,7 @@ The 404 stays in the world: the pinho studio canvas, the brand mark, the display
 
 ### Entrance Motion
 - **Grammar:** Content arrives when the reader reaches it, with one easing (ease, `cubic-bezier(.16,1,.3,1)`). Headings unveil upward from a clip (`clip-path` inset from the bottom plus a 0.35em rise, 1.1s). Copy, rows and actions fade and rise 22px (0.9s). Photos and the map unclip from an 18% top inset and settle from 1.06 scale (1.3–1.6s). Cutouts rise 64px and fade in (1.1–1.4s). Siblings stagger by 90ms in reading order, capped at 8.
+- **The opening:** The hero (`[data-entrance]`) does not wait for the trace engine. An inline script right after it adds `hero-in` to the root once both fonts are in (at most 0.9s), and the same unveil, fade and rise run as CSS keyframes (h1, then lead at 90ms, actions at 180ms, the cutout alongside), so the headline paints early and never swaps typeface mid-reveal. The engine skips `[data-entrance]` content and adds `hero-in` itself when it starts, as a fallback.
 - **Line motion:** One travelled distance glides toward the scroll target each frame and is poured into the segments in order. Ticks and path words switch on as the pen passes them, and the child rides the head.
 - **Reduced motion:** No `js-motion` class is set, so all content is visible. The whole line is drawn complete at once with no ghosts, no trail, no intro and no child, the gallery does not pin, and every transition collapses to 0.001ms.
 - **No JS / failure:** `js-motion` is added only by an inline script, which removes it again after 3.5s if the trace engine has not started. Without JS, all content renders statically with no line and the gallery is a plain scroller.

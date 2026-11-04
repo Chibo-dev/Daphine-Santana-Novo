@@ -18,11 +18,12 @@
   // [route share of the scroll schedule, weight of sideways travel] — see build()
   // glide length: longer on big screens (sweeps read as one gesture), shorter where the view is small
   function glide() { return window.innerHeight < 520 ? 0.8 : mqMobile.matches ? 0.83 : 0.895; }
-  var SMOOTH = glide();
+  var SMOOTH;
   var MIX = [0.55, 0.8];
   var states = [];
   var introStart = 0, INTRO = 2400;
-  var vw = window.innerWidth, vh = window.innerHeight;
+  // the viewport (and SMOOTH) are read once the page has drawn: see begin() at the end
+  var vw, vh;
 
   function attr(el, name, mob) {
     var m = el.dataset[name + 'M'];
@@ -154,15 +155,25 @@
 
   // audit hook: the anchor list each section would draw through right now
 
+  // lengths are measured on a path that is not in the page: asking a drawn one, just after its new d
+  // is written, makes the browser lay the whole page out again first
+  var ruler = document.createElementNS(NS, 'path'), builtSy = 0;
   function build() {
     pinLayout();
     var mob = mqMobile.matches;
+    // every read comes first (anchors, page positions, the goal, the scroll range), then every write:
+    // a read after a write forces a fresh layout, and that was once per section
     var geo = sections.map(function (sec) { return points(sec, mob); });
-    var sy = window.scrollY;
+    var sy = builtSy = window.scrollY;
     // page positions are cached here so the frame loop never has to read layout
     sections.forEach(function (sec, si) {
-      if (states[si]) { states[si].top = sec.getBoundingClientRect().top + sy; states[si].h = sec.offsetHeight; }
+      var g = geo[si], sr = sec.getBoundingClientRect(), goal = sec.querySelector('[data-child-goal]');
+      g.top = sr.top + sy;
+      // where the child turns to at the very end (the final button), in section coordinates
+      if (goal) { var gr = goal.getBoundingClientRect(); g.goal = gr.left + gr.width / 2 - sr.left; } else g.goal = null;
+      if (states[si]) { states[si].top = g.top; states[si].h = sec.offsetHeight; }
     });
+    var maxS = document.documentElement.scrollHeight - window.innerHeight;
 
     sections.forEach(function (sec, si) {
       var g = geo[si];
@@ -196,7 +207,7 @@
         }
       }
       s.d = d; s.w = g.w; s.h = g.h; s.zkey = zkey; s.cl = g.cl; s.cr = g.cr;
-      s.top = sec.getBoundingClientRect().top + window.scrollY;
+      s.top = g.top;
       s.trail.setAttribute('d', d);
       [s.svg, s.fsvg].forEach(function (svg) {
         if (!svg) return;
@@ -209,7 +220,8 @@
         s.clip.setAttribute('width', zz[2]); s.clip.setAttribute('height', zz[3]);
       }
 
-      var len = s.path.getTotalLength();
+      ruler.setAttribute('d', d);
+      var len = ruler.getTotalLength() || s.path.getTotalLength();
       var n = Math.ceil(len / STEP) + 1;
       var xs = new Float32Array(n), ys = new Float32Array(n), u = new Float32Array(n), cm = new Float32Array(n);
       sample(cr.c, len, n, xs, ys);
@@ -235,9 +247,7 @@
         if (Math.abs(ang[a1] - ang[a0]) >= 5.24) { for (var a2 = a0; a2 <= a1; a2++) lp[a2] = 1; break; }
       }
       s.loop = lp;
-      // where the child turns to at the very end (the final button), in section coordinates
-      var goal = sec.querySelector('[data-child-goal]');
-      if (goal) { var gr = goal.getBoundingClientRect(); s.goal = gr.left + gr.width / 2 - sec.getBoundingClientRect().left; } else s.goal = null;
+      s.goal = g.goal;
       s.drawn = -1;
 
       // where each tick sits along the line
@@ -273,6 +283,9 @@
             var a0 = Math.atan2(ys[idx + 1] - ys[idx], xs[idx + 1] - xs[idx]);
             var a1 = Math.atan2(ys[idx + need] - ys[idx + need - 1], xs[idx + need] - xs[idx + need - 1]);
             if (Math.abs(a1 - a0) > 0.52 || (strict && a1 - a0 > 0.26)) ok = false;
+            // nor start on the tail of a turn up into the word (its first letters would crowd): look one letter back
+            var b = Math.max(0, idx - Math.ceil(cw * 1.5 / STEP));
+            if (ok && b < idx && a0 - Math.atan2(ys[b + 1] - ys[b], xs[b + 1] - xs[b]) < -0.26) ok = false;
           }
           if (ok) {
             var t = mk('text', { dy: -10 });
@@ -288,14 +301,14 @@
       }
       s.lines.concat(s.ghosts).forEach(function (l) { l.style.strokeDasharray = len + ' ' + (len + 20); });
     });
-    offsets();
+    offsets(maxS);
     schedule();
   }
 
-  // where each segment starts on the single continuous stroke
+  // where each segment starts on the single continuous stroke (max: the scroll range, as build() read it)
   var total = 0, maxScroll = Infinity;
-  function offsets() {
-    maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  function offsets(max) {
+    maxScroll = max;
     total = 0;
     states.forEach(function (s) { if (s && s.len) { s.off = total; total += s.len; } });
   }
@@ -1013,14 +1026,17 @@
     var stick = withHead
       ? Math.round(top + Math.max(0, (avail - stage.offsetHeight) / 2))
       : Math.round(top + (avail - wrap.offsetHeight) / 2 - wrap.offsetTop);
-    pinSec.style.setProperty('--stage-top', stick + 'px');
-    strip.style.transform = 'none'; filmLast = -1;
+    // measured in the same pass, before the writes below (a read after them would force another layout):
+    // the strip's reach at rest is where its last frame ends now plus the film's own slide (filmLast px, its only transform)
     var frames = strip.querySelectorAll('.frame'), last = frames[frames.length - 1];
     var padR = parseFloat(getComputedStyle(strip).paddingRight) || 0;
-    travel = Math.max(0, Math.round(last.getBoundingClientRect().right + padR - vwid));
+    travel = Math.max(0, Math.round(last.getBoundingClientRect().right + Math.max(0, filmLast) + padR - vwid));
     hold = Math.round(Math.min(160, window.innerHeight * 0.18));
+    var stageH = stage.offsetHeight;
+    pinSec.style.setProperty('--stage-top', stick + 'px');
+    strip.style.transform = 'none'; filmLast = -1;
     pinTop = stick;
-    pinSec.style.setProperty('--pin-h', Math.round(stage.offsetHeight + travel + 2 * hold) + 'px');
+    pinSec.style.setProperty('--pin-h', Math.round(stageH + travel + 2 * hold) + 'px');
   }
   function filmRead() {
     filmX = -1;
@@ -1062,16 +1078,20 @@
     '.oque-photo img,.sinais-photo img,.clinic-map,.hero-figure,.sobre-figure,.final-figure,.lk-figure';
   function reveal() {
     if (!root.classList.contains('js-motion')) return;
-    var els = Array.prototype.slice.call(document.querySelectorAll(revealSel));
-    // siblings that arrive together are staggered in reading order
-    var groups = new Map();
+    // the opening block ([data-entrance]) arrives on its own as soon as its fonts are in (site.css: .hero-in)
+    var els = Array.prototype.slice.call(document.querySelectorAll(revealSel))
+      .filter(function (el) { return !el.closest('[data-entrance]'); });
+    // siblings that arrive together are staggered in reading order. The step (--i) is written as each one
+    // arrives: written here, a hundred inherited custom properties made the browser restyle most of the page
+    var groups = new Map(), step = new Map();
     els.forEach(function (el) {
       var key = el.closest('.hero-copy,.final-copy,.lk-wrap,.sobre-copy') || el.parentElement;
       var n = groups.get(key) || 0;
-      el.style.setProperty('--i', Math.min(n, 7));
+      step.set(el, Math.min(n, 7));
       groups.set(key, n + 1);
     });
-    if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in'); }); return; }
+    function arrive(el) { el.style.setProperty('--i', step.get(el)); el.classList.add('in'); }
+    if (!('IntersectionObserver' in window)) { els.forEach(arrive); return; }
     // a clipped heading has no visible area to observe, so watch its parent instead
     var watch = new Map();
     els.forEach(function (el) {
@@ -1081,7 +1101,7 @@
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         if (!e.isIntersecting) return;
-        watch.get(e.target).forEach(function (el) { el.classList.add('in'); });
+        watch.get(e.target).forEach(arrive);
         io.unobserve(e.target);
       });
     }, { rootMargin: '0px 0px -6% 0px', threshold: 0 });
@@ -1089,12 +1109,15 @@
     var pending = els.slice();
     sweep = function () {
       if (!pending.length) return;
+      // measure them all, then let them in (a class written between two measures forces a restyle)
+      var due = [];
       pending = pending.filter(function (el) {
         if (el.classList.contains('in')) return false;
         var t = el.matches('h1,h2,.display-name') ? el.parentElement : el;
-        if (t.getBoundingClientRect().top < vh) { el.classList.add('in'); return false; }
+        if (t.getBoundingClientRect().top < vh) { due.push(el); return false; }
         return true;
       });
+      due.forEach(arrive);
     };
   }
 
@@ -1107,21 +1130,25 @@
         window.scrollY >= root.scrollHeight - window.innerHeight - 2;
     }
     build();
-    if (landed) tg.scrollIntoView();
+    // the scroll position as build() read it (read again after the writes below, it would force a layout)
+    var sy = builtSy;
+    if (landed) { tg.scrollIntoView(); sy = window.scrollY; }
     // from here on in-page links glide (site.css: html.is-ready)
     root.classList.add('is-ready');
+    // should the inline opener in the page not have run, the opening block arrives with the line
+    root.classList.add('hero-in');
     started = true;
     var first = states.find(function (s) { return s && s.intro; });
-    if (!reduce && first && window.scrollY < 40) {
+    if (!reduce && first && sy < 40) {
       introDur = Math.min(3600, Math.max(2200, first.len / 0.9));
       introStart = performance.now();
     } else {
-      curD = target(window.scrollY, performance.now());
+      curD = target(sy, performance.now());
     }
     schedule();
   }
   reveal();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else start();
+  // the line starts once the page has drawn and its fonts are in: see begin() at the end
   window.addEventListener('load', rebuild);
 
   // menu sheet (below 1080px)
@@ -1209,7 +1236,6 @@
   var fab = document.querySelector('[data-fab]');
   function chrome() { if (header) header.classList.toggle('is-solid', window.scrollY > 24); }
   window.addEventListener('scroll', chrome, { passive: true });
-  chrome();
   if (fab && 'IntersectionObserver' in window) {
     var fio = new IntersectionObserver(function (es) {
       es.forEach(function (e) { fabHidden[e.target.id] = e.isIntersecting; });
@@ -1217,4 +1243,19 @@
     }, { threshold: 0.15 });
     ['topo', 'agendar'].forEach(function (id) { var t = document.getElementById(id); if (t) fio.observe(t); });
   }
+
+  // nothing is measured before the page has drawn once: this script can run before the browser's first layout,
+  // and then the first read (the viewport, the scroll position, even fonts.ready once it has resolved) makes it
+  // lay the whole page out inside the script. Then, as before, the line waits for its fonts.
+  // A tab opened in the background draws nothing yet: it goes on at once, as before (and within a second anyway).
+  var begun = false;
+  function begin() {
+    if (begun) return;
+    begun = true;
+    vw = window.innerWidth; vh = window.innerHeight; SMOOTH = glide();
+    chrome();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else start();
+  }
+  if (document.hidden) begin();
+  else { requestAnimationFrame(function () { setTimeout(begin); }); setTimeout(begin, 1000); }
 })();
