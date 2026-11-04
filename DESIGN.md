@@ -214,7 +214,7 @@ The density is calm: one idea per section, generous vertical rhythm, and long ru
 A forest-green world of one deep field and three pale reading grounds, drawn in two line greens. The action takes no colour of its own; it borrows the opposite of its ground.
 
 ### Primary
-- **Pinho Field** (pinho): The deep forest ground for the hero, "Como começar", the reviews, the close, the links page and the 404. Headings on it turn on-pinho; highlights and the line turn lima. On light grounds pinho is also the fill of the WhatsApp action, with Pinho Hover (pinho-h, the same step as pinho-soft) on hover, and the fill of the address card that hangs over the map. Pinho Deep (pinho-deep) is reserved for the footer, and Pinho Soft (pinho-soft) is a tonal step that stays available for raised surfaces on the field.
+- **Pinho Field** (pinho): The deep forest ground for the hero, "Como começar", the reviews, the close, the portrait half of /links and the 404. Headings on it turn on-pinho; highlights and the line turn lima. On light grounds pinho is also the fill of the WhatsApp action, with Pinho Hover (pinho-h, the same step as pinho-soft) on hover, and the fill of the address card that hangs over the map. Pinho Deep (pinho-deep) is reserved for the footer, and Pinho Soft (pinho-soft) is a tonal step that stays available for raised surfaces on the field.
 - **Folha Line** (folha): The line colour on light grounds (stroke, dotted trail, path words, ticks, stop dots, FAQ toggle), the child on light grounds, the line icons of the sinais and especialidades, and the colour of highlighted words and strong links on light grounds. Default focus ring colour. On the map it is the colour wash that prints Google's tiles in the site's own ink.
 
 ### Secondary
@@ -260,7 +260,7 @@ A forest-green world of one deep field and three pale reading grounds, drawn in 
 ### Named Rules
 **The Width Axis Rule.** Headings run the wdth axis below 100: 92 for headings, 88–90 for the brand name and small display text, 80 for words on the path. Never set display text at full width.
 
-**The Heading Starts Cold Rule.** A section opens with its heading. There is no small uppercase label, kicker or eyebrow above an h1 or h2. Uppercase tracked text exists only as footer column heads.
+**The Heading Starts Cold Rule.** A section opens with its heading. There is no small uppercase label, kicker or eyebrow above an h1 or h2. Uppercase tracked text exists only as footer column heads and, on /links, as the place line, the credentials line and the row tags; never above a heading.
 
 **The One Highlight Rule.** A heading can colour at most one word or phrase (folha on light, lima on pinho), and that word carries the meaning of the sentence ("movimento", "hoje", "curva").
 
@@ -283,7 +283,7 @@ Repair breakpoints are narrow, targeted fixes for real device classes, layered o
 The line is a chain of per-section SVG segments, one for each `[data-trace]` section, and they meet at the section edges.
 - **One stroke.** The segments are drawn as a single stroke: one travelled distance is poured into them in order, so only one head ever moves. Scroll is measured along the route itself (vertical travel plus a share of sideways runs and loops), so flat stretches do not fire off and climbing loops do not stall. The head follows its target with a glide, longer on large screens so a long sideways run reads as one sweep, and shorter on phones and short screens. At the very bottom of the page the stroke completes.
 - **Trail.** Ahead of the head the whole route is shown as a quiet dotted trail (round dots, low opacity, in the line colour of the field). The stroke fills it as the reader scrolls. Reduced motion hides the trail.
-- **Lanes.** The line travels in two lanes, `L` and `R`, computed at every width from the real content edges: each lane sits at 0.45 of its side margin (the space between the viewport edge and the container's padded content edge), clamped 6px from the viewport. Lanes replace fixed width fractions; a numeric fraction is still accepted but is reserved for single-column pages (/links enters at 0.22).
+- **Lanes.** The line travels in two lanes, `L` and `R`, computed at every width from the real content edges: each lane sits at 0.45 of its side margin (the space between the viewport edge and the container's padded content edge), clamped 6px from the viewport. Lanes replace fixed width fractions; a numeric fraction is still accepted for a section with no content column.
 - **Edge continuity.** `data-in` and `data-out` name the lane where the line crosses the top and bottom edge. One section's `data-out` must equal the next section's `data-in`, so the stroke reads as one. Phones have their own crossings (`data-in-m`, `data-out-m`), chosen per section; the hero-to-sinais handoff uses `R` at every size because the hero cutout is on the right.
 - **Leads.** Each crossing is followed (and each exit preceded) by a straight vertical run in its lane, 70px by default and never more than 10% of the section's height. `data-lead` / `data-lead-m` override it where an anchor sits close to the edge; phones use short leads so a sweep can start soon after the edge.
 - **Adding a section.** Give it a ground that differs from both neighbours, `data-trace`, `data-in` matching the previous `data-out`, and a `data-out` that matches whatever follows, at both sizes. Then place anchors. A section with no anchors draws a straight run between its edges in the gutter.
@@ -332,7 +332,7 @@ The sinais and especialidades carry their own hand-drawn line icons (the si-* an
 - The studio canvas behind the portraits is a texture, not a photograph, and ships with the same `.json` provenance sidecar.
 - A cutout either sits flush on a section edge (the hero figure is bottom-aligned to the hero's bottom; the close figure sits on the bottom of the final section) or bleeds off the viewport (the sobre figure runs off the right edge and below the section with a negative bottom margin). The place where the photo's frame cuts the body must never be visible.
 - Cutouts sit above the line (z 2), with anchors placed around them so the line loops around the person. A front zone lets the stroke pass in front of the lap and the armchair (hero) or the lower body (close).
-- On /links the cutout is cropped into a soft-bottomed frame (`border-radius: 0 0 50% 50% / 0 0 18% 18%`) because the column is too narrow for a full figure.
+- On /links the full hero cutout sits flush on the bottom of the portrait half, as in the hero.
 
 ## Components
 
@@ -343,7 +343,7 @@ Tactile and decisive. There is exactly one filled button family, and it is the W
 - **On pinho grounds and in the header:** Lima fill, pinho label and icon. Hover lima-h.
 - **Hover / Focus:** A 2px rise and a deeper shadow (0.35s, ease); on fine pointers the WhatsApp mark sways (−12°). Active presses to 0.98. Focus is the global 3px outline, offset 3px (folha on light, lima inside pinho and the header).
 - **Mobile:** Full width under 540px (except in the header). Under 375px padding and size tighten and the label may wrap, balanced and centred; under 420px the header action becomes a 44px icon-only circle with a visually hidden label.
-- **On /links:** The same lima action stretched to 72px with a two-line label (title plus small 0.84rem line).
+- **On /links:** The action is a ruled row like the others, and its round end is the filled part: a 48px pinho disc with the lima WhatsApp mark (the other rows have an outlined disc that fills pinho on hover).
 - **The way home (404 only):** When a non-WhatsApp action must sit beside the WhatsApp action on pinho, it is a ring, never a fill: transparent with a 1.5px lima ring at 55%, on-pinho label and a lima icon, turning lima with a full ring and a 2px rise on hover. The WhatsApp action stays the one lima fill on the field.
 
 ### Links
@@ -386,6 +386,9 @@ A horizontal row of 4:5 photo frames (16px corner) with bold ink captions on the
 
 ### Share Image
 The 1200×630 share image (og-daphine-santana.jpg) is a page of the same world: the pinho studio canvas with its light and vignette, the hero cutout of Daphine in the armchair on the right, one lima line with its ghost echoes starting from a dot under the name and looping around her, the monogram, "Daphine Santana" in Bricolage at display weight, and a two-tone descriptor (on-pinho over lima, "Psicomotricidade e / desenvolvimento infantil"), with the place line and a lima pin below. It ships with a provenance sidecar stating "No generative content".
+
+### Links Page
+/links is an editorial split, the same anatomy as the developer's other link pages, built from this world. On desktop the left half is the painted studio (fundo-estudio-a, light behind the sitter) with the full hero cutout flush on its bottom, sticky at the viewport height; the line draws round her on load (the home hero's contour with a flatter crown, three ghosts, the words sentar, engatinhar, andar, pular) and passes in front of her lap through a front zone. The right half is névoa: the pinho DS mark (img/logo-daphine-pinho-*.webp) with the place in small tracked capitals, the name as the h1 (display, wdth 88, one line on desktop), a lead in the first person ending in a bold line, a credentials line in tracked capitals with short folha bars between items (the bar at the start of a wrapped line is clipped away), then a ruled list under a 2px ink rule. Each row is a title (display 600, wdth 90), a tag in folha tracked capitals, a muted sub line and a 48px disc at the end; on hover a 2px folha line draws under the row from the left, the title turns folha and the disc fills pinho with a lima arrow. The WhatsApp row comes first and its disc is always filled. Under the list: Instagram and the phone with folha icons, then the developer credit on the light ground (ink pills on a faint ink ring, darker credit colours for contrast). Under 960px the halves stack, the portrait becomes a header (420–540px tall; taller on portrait tablets so the words keep their room) and phones take a wider, flatter arch. Landscape phones go back side by side. Everything arrives at once when the fonts are in: the portrait rises, the name uses the heading rise and the rest follows in reading order, 70ms apart.
 
 ### 404 Page
 The 404 stays in the world: the pinho studio canvas, the brand mark, the display h1 "Este caminho fez uma curva." with "curva" in lima, a lead in the first person, and two actions side by side, the way home as a lima ring and the WhatsApp action as the lima fill. Beside the copy (above it on phones) sits a static drawing of the line: it leaves a dot, loops once with two ghost echoes and milestone words on the path, and ends in a dot from which the dotted trail runs out of the frame. Nothing animates. All addresses are absolute so it works at any URL depth. The developer credit closes the page.
