@@ -392,7 +392,8 @@ svg.trace.front{z-index:3}
 .footer-signature{display:flex;align-items:center;gap:11px;font-size:.78rem;color:var(--on-pinho-muted)}
 .footer-signature-label{white-space:nowrap;transition:color .18s ease-out}
 .footer-signature-pills{display:inline-flex;align-items:center;gap:10px}
-.footer-signature-divider{width:2px;height:17px;background-color:var(--line-dark);flex-shrink:0;border-radius:1px;transition:background-color .18s ease-out}
+/* the divider between the two pills is a small centred dot (same as the current Chibo Dev signature) */
+.footer-signature-divider{width:4px;height:4px;background-color:var(--line-dark);flex-shrink:0;border-radius:50%;transition:background-color .18s ease-out}
 .footer-signature a{display:inline-flex;align-items:center;gap:7px;color:var(--on-pinho);text-decoration:none;white-space:nowrap;
   padding:7px 12px;border-radius:999px;border:1px solid var(--line-dark);
   transition:transform .18s ease-out,box-shadow .18s ease-out,border-color .18s ease-out,color .18s ease-out,background-color .18s ease-out}
