@@ -560,7 +560,6 @@ svg.trace.front{z-index:3}
   .footer-col a{align-items:center}
   .footer-col a .icon{margin-top:0}
   .footer .footer-signature{flex-direction:column;align-items:flex-start;gap:10px}
-  .footer{padding-bottom:96px}
   .faq-a{padding-right:0}
   .measure p,.diffs dd,.faq-a{max-width:34em}
   .frame{flex-basis:min(72vw,400px)}
@@ -686,10 +685,6 @@ svg.trace.front{z-index:3}
   .footer-col{gap:0}
   .footer-col .foot-h{margin-bottom:4px}
   .footer-col a,.footer-col p{padding-block:10px;min-height:44px}
-}
-/* short landscape screens: room under the signature so the floating button never covers it */
-@media (min-width:761px) and (max-height:560px){
-  .footer{padding-bottom:96px}
 }
 /* /links: the signature keeps the page gutter and centres when it wraps */
 .lk-foot{padding-inline:28px}

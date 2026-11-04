@@ -1231,7 +1231,7 @@
 
   // header + floating button
   var fabHidden = {};
-  function fabState() { var f = document.querySelector('[data-fab]'); if (f) f.classList.toggle('is-hidden', !!(fabHidden.topo || fabHidden.agendar || pinHeld)); }
+  function fabState() { var f = document.querySelector('[data-fab]'); if (f) f.classList.toggle('is-hidden', !!(fabHidden.topo || fabHidden.agendar || fabHidden.rodape || pinHeld)); }
   var header = document.querySelector('[data-header]');
   var fab = document.querySelector('[data-fab]');
   function chrome() { if (header) header.classList.toggle('is-solid', window.scrollY > 24); }
@@ -1241,7 +1241,8 @@
       es.forEach(function (e) { fabHidden[e.target.id] = e.isIntersecting; });
       fabState();
     }, { threshold: 0.15 });
-    ['topo', 'agendar'].forEach(function (id) { var t = document.getElementById(id); if (t) fio.observe(t); });
+    // the footer too: the button steps aside there instead of the page keeping room under the signature for it
+    ['topo', 'agendar', 'rodape'].forEach(function (id) { var t = document.getElementById(id); if (t) fio.observe(t); });
   }
 
   // nothing is measured before the page has drawn once: this script can run before the browser's first layout,
