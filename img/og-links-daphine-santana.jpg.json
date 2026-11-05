@@ -1,0 +1,4 @@
+{
+  "prompt": "Share image for /links: a 1600x840 render (1.5x) of the links page itself in headless Chrome, with the link list, contacts and credit hidden and the type scaled for a card (portrait half with the scroll line and its six milestone words, then the DS mark, name, lead and credentials), downscaled to 1200x630 with Pillow (Lanczos) and saved as JPEG q88. The portrait is the client's own photograph (img/recorte-hero-*.webp) on the procedural studio canvas. No generative content.",
+  "createdAt": "2026-11-04T23:00:00.000Z"
+}

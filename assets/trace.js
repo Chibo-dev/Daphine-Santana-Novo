@@ -286,6 +286,9 @@
             // nor start on the tail of a turn up into the word (its first letters would crowd): look one letter back
             var b = Math.max(0, idx - Math.ceil(cw * 1.5 / STEP));
             if (ok && b < idx && a0 - Math.atan2(ys[b + 1] - ys[b], xs[b + 1] - xs[b]) < -0.26) ok = false;
+            // strict: nor just out of any bend (a U-turn into the run crowds the letters on its inside): look four letters back
+            var b4 = Math.max(0, idx - Math.ceil(cw * 4 / STEP));
+            if (ok && strict && b4 < idx && Math.abs(a0 - Math.atan2(ys[b4 + 1] - ys[b4], xs[b4 + 1] - xs[b4])) > 0.35) ok = false;
           }
           if (ok) {
             var t = mk('text', { dy: -10 });
