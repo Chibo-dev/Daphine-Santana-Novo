@@ -1,6 +1,6 @@
 # Espaço Daphine Santana: conteúdo completo
 
-> Texto do site https://daphinesantana.com.br/ em markdown. Daphine Santana é psicomotricista (CREF 154086-G/SP) em Mogi das Cruzes (SP), com atendimento na clínica ou em casa, em todo o Alto Tietê. Os trechos em primeira pessoa são da própria Daphine, como aparecem no site. Atualizado em 14/10/2026.
+> Texto do site https://www.daphinesantana.com.br/ em markdown. Daphine Santana é psicomotricista (CREF 154086-G/SP) em Mogi das Cruzes (SP), com atendimento na clínica ou em casa, em todo o Alto Tietê. Os trechos em primeira pessoa são da própria Daphine, como aparecem no site. Atualizado em 14/10/2026.
 
 Cada conquista do seu filho começa no movimento.
 
@@ -188,7 +188,7 @@ O site não publica valores nem horários de atendimento; para tirar dúvidas, o
 
 ## Páginas do site
 
-- [Início](https://daphinesantana.com.br/): a página principal, com todas as seções acima.
-- [Links](https://daphinesantana.com.br/links/): página de links da bio do Instagram, com “Agendar pelo WhatsApp”, “Conhecer o trabalho” e “Como chegar”.
+- [Início](https://www.daphinesantana.com.br/): a página principal, com todas as seções acima.
+- [Links](https://www.daphinesantana.com.br/links/): página de links da bio do Instagram, com “Agendar pelo WhatsApp”, “Conhecer o trabalho” e “Como chegar”.
 
 © 2026 Espaço Daphine Santana. Site desenvolvido por [Chibo Dev](https://chibodev.com).

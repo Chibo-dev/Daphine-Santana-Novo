@@ -1,6 +1,6 @@
 # Espaço Daphine Santana
 
-Site de [Daphine Santana](https://daphinesantana.com.br), psicomotricista em Mogi das Cruzes e Alto Tietê.
+Site de [Daphine Santana](https://www.daphinesantana.com.br), psicomotricista em Mogi das Cruzes e Alto Tietê.
 
 Site estático: HTML, CSS e um JavaScript sem dependências. Os arquivos que você edita são os que rodam localmente; no deploy a Vercel roda um build curto (veja abaixo).
 

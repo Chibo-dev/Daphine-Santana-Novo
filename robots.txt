@@ -1,4 +1,4 @@
-# robots.txt · Espaço Daphine Santana · https://daphinesantana.com.br/
+# robots.txt · Espaço Daphine Santana · https://www.daphinesantana.com.br/
 # O site é público: buscadores e assistentes de IA são bem-vindos.
 # Resumo para IAs: /llms.txt · conteúdo completo: /llms-full.txt
 
@@ -37,4 +37,4 @@ Disallow: /README.md
 Disallow: /img/*.json
 Allow: /
 
-Sitemap: https://daphinesantana.com.br/sitemap.xml
+Sitemap: https://www.daphinesantana.com.br/sitemap.xml

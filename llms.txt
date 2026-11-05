@@ -10,18 +10,18 @@ O atendimento é particular, com recibo para reembolso quando o convênio oferec
 
 ## Página principal
 
-- [Início](https://daphinesantana.com.br/): apresentação do trabalho e caminho para agendar a avaliação inicial.
-- [Sinais de atenção](https://daphinesantana.com.br/#sinais): seis sinais no desenvolvimento da criança que merecem orientação.
-- [O que é psicomotricidade](https://daphinesantana.com.br/#psicomotricidade): como o movimento, a brincadeira e o vínculo ajudam a criança a se desenvolver.
-- [Como começar](https://daphinesantana.com.br/#comecar): os três passos, da conversa no WhatsApp ao plano personalizado.
-- [Especialidades](https://daphinesantana.com.br/#especialidades): as sete frentes de cuidado, com a descrição e o público de cada uma.
-- [Sobre a Daphine](https://daphinesantana.com.br/#sobre): quem é Daphine Santana e os diferenciais do espaço.
-- [Depoimentos](https://daphinesantana.com.br/#depoimentos): avaliações de famílias publicadas no Google.
-- [O espaço](https://daphinesantana.com.br/#espaco): fotos da recepção, da sala de psicomotricidade e das demais áreas da clínica.
-- [Dúvidas](https://daphinesantana.com.br/#duvidas): avaliação inicial, atendimento em casa, psicomotricidade aquática, duração do acompanhamento, convênios e agendamento.
-- [Onde atendemos](https://daphinesantana.com.br/#onde): endereço da clínica, mapa e cidades com atendimento em casa.
-- [Agendar](https://daphinesantana.com.br/#agendar): o próximo passo, uma conversa no WhatsApp.
-- [Links](https://daphinesantana.com.br/links/): página de links da bio do Instagram (agendar, conhecer o trabalho, como chegar).
+- [Início](https://www.daphinesantana.com.br/): apresentação do trabalho e caminho para agendar a avaliação inicial.
+- [Sinais de atenção](https://www.daphinesantana.com.br/#sinais): seis sinais no desenvolvimento da criança que merecem orientação.
+- [O que é psicomotricidade](https://www.daphinesantana.com.br/#psicomotricidade): como o movimento, a brincadeira e o vínculo ajudam a criança a se desenvolver.
+- [Como começar](https://www.daphinesantana.com.br/#comecar): os três passos, da conversa no WhatsApp ao plano personalizado.
+- [Especialidades](https://www.daphinesantana.com.br/#especialidades): as sete frentes de cuidado, com a descrição e o público de cada uma.
+- [Sobre a Daphine](https://www.daphinesantana.com.br/#sobre): quem é Daphine Santana e os diferenciais do espaço.
+- [Depoimentos](https://www.daphinesantana.com.br/#depoimentos): avaliações de famílias publicadas no Google.
+- [O espaço](https://www.daphinesantana.com.br/#espaco): fotos da recepção, da sala de psicomotricidade e das demais áreas da clínica.
+- [Dúvidas](https://www.daphinesantana.com.br/#duvidas): avaliação inicial, atendimento em casa, psicomotricidade aquática, duração do acompanhamento, convênios e agendamento.
+- [Onde atendemos](https://www.daphinesantana.com.br/#onde): endereço da clínica, mapa e cidades com atendimento em casa.
+- [Agendar](https://www.daphinesantana.com.br/#agendar): o próximo passo, uma conversa no WhatsApp.
+- [Links](https://www.daphinesantana.com.br/links/): página de links da bio do Instagram (agendar, conhecer o trabalho, como chegar).
 
 ## Contato
 
@@ -31,4 +31,4 @@ O atendimento é particular, com recibo para reembolso quando o convênio oferec
 
 ## Optional
 
-- [Conteúdo completo](https://daphinesantana.com.br/llms-full.txt): todo o texto do site em markdown, com as especialidades, os depoimentos e as respostas das dúvidas frequentes.
+- [Conteúdo completo](https://www.daphinesantana.com.br/llms-full.txt): todo o texto do site em markdown, com as especialidades, os depoimentos e as respostas das dúvidas frequentes.
