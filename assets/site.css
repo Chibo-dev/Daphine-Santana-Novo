@@ -1,8 +1,15 @@
 /* Espaço Daphine Santana — O Traço do Movimento */
 /* fonts are self-hosted (SIL OFL, licenses in assets/fonts): Latin subset, variable ranges trimmed to what the site uses
    (Bricolage wght 500–700, wdth 80–100, full opsz; Atkinson wght 400–700) */
+/* Bricolage comes in two cuts of the same variable font: the Portuguese alphabet, digits and common punctuation (56 KB,
+   the only one the pages load) and every other Latin character (41 KB, fetched only if some copy ever uses one).
+   The full source and the split script live in scripts/font-src. */
 @font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:500 700;font-stretch:80% 100%;font-display:swap;
-  src:url(fonts/bricolage-grotesque-latin.woff2) format('woff2')}
+  src:url(fonts/bricolage-grotesque-ext.woff2) format('woff2');
+  unicode-range:U+23-24,U+26,U+2A-2B,U+3C-3E,U+40,U+5B-60,U+7B-7E,U+A1-A3,U+A5-AC,U+AE-B6,U+B8-C0,U+C4-C6,U+C8,U+CB-CC,U+CE-D2,U+D6-D9,U+DB-DF,U+E4-E6,U+E8,U+EB-EC,U+EE-F2,U+F6-F9,U+FB-FF,U+131,U+152-153,U+2C6,U+2DA,U+2DC,U+201A,U+201E,U+2022,U+2039-203A,U+20AC,U+2122,U+2191,U+2193,U+2212}
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:500 700;font-stretch:80% 100%;font-display:swap;
+  src:url(fonts/bricolage-grotesque-pt.woff2) format('woff2');
+  unicode-range:U+9-D,U+20-22,U+25,U+27-29,U+2C-3B,U+3F,U+41-5A,U+61-7A,U+A0,U+B7,U+C1-C3,U+C7,U+C9-CA,U+CD,U+D3-D5,U+DA,U+E0-E3,U+E7,U+E9-EA,U+ED,U+F3-F5,U+FA,U+2013-2014,U+2018-2019,U+201C-201D,U+2026}
 @font-face{font-family:'Atkinson Hyperlegible Next';font-style:normal;font-weight:400 700;font-display:swap;
   src:url(fonts/atkinson-hyperlegible-next-latin.woff2) format('woff2')}
 @font-face{font-family:'Atkinson Hyperlegible Next';font-style:italic;font-weight:400;font-display:swap;

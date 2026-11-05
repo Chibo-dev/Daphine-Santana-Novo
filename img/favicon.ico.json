@@ -1,4 +1,4 @@
 {
-  "prompt": "Pre-existing client asset copied unchanged from the previous site (github.com/Chibo-dev/Daphine-Santana, img/favicon.ico). Real photo/brand asset supplied by the client.",
-  "createdAt": "2026-10-13T22:22:40.825Z"
+  "prompt": "favicon.ico with 16, 32 and 48 px PNG entries, each downscaled with ffmpeg lanczos from the DS monogram on solid pinho #123F2E (~/Desktop/Logo-DS-Daphine/logo-DS-fundo-verde.png). Replaces the 16 px icon copied from the previous site. No generative content.",
+  "createdAt": "2026-11-05T19:30:00.000Z"
 }

@@ -746,9 +746,12 @@
       s.gap = mk('path', { 'clip-rule': 'evenodd' }, cp);
     }
     var R = r.toFixed(1), D2 = (2 * r).toFixed(1);
-    s.gap.setAttribute('d', 'M-99 -99H' + (s.w + 99) + 'V' + (s.h + 99) + 'H-99Z' +
+    setA(s.gap, 'd', 'M-99 -99H' + (s.w + 99) + 'V' + (s.h + 99) + 'H-99Z' +
       'M' + (x - r).toFixed(1) + ' ' + y.toFixed(1) + 'a' + R + ' ' + R + ' 0 1 0 ' + D2 + ' 0a' + R + ' ' + R + ' 0 1 0 -' + D2 + ' 0Z');
   }
+  // writes only when the value changes: even an identical write invalidates the element, and for the trail's
+  // clip path that repaints the whole trail (the full section) every frame while the child idles on screen
+  function setA(el, name, v) { var c = el.__a || (el.__a = {}); if (c[name] !== v) { c[name] = v; el.setAttribute(name, v); } }
   // crossfade between stages in JS (a CSS transition would restart whenever the child changes sections)
   function fade(dt) {
     var busy = false;
@@ -920,13 +923,13 @@
       if (!loc.prev.clipY) { host = loc.prev; hy += s.top - loc.prev.top; }
     }
     if (C.host !== host) { host.svg.appendChild(C.g); C.host = host; }
-    C.g.setAttribute('transform', 'translate(' + hx.toFixed(2) + ' ' + hy.toFixed(2) + ')');
-    st.g.setAttribute('transform', 'rotate(' + C.R.toFixed(2) + ') scale(' + sx.toFixed(4) + ' ' + sy2.toFixed(4) + ')');
-    st.inner.setAttribute('transform', 'translate(' + ox.toFixed(2) + ' ' + oy.toFixed(2) + ') rotate(' + (P.lean || 0).toFixed(2) + ')');
+    setA(C.g, 'transform', 'translate(' + hx.toFixed(2) + ' ' + hy.toFixed(2) + ')');
+    setA(st.g, 'transform', 'rotate(' + C.R.toFixed(2) + ') scale(' + sx.toFixed(4) + ' ' + sy2.toFixed(4) + ')');
+    setA(st.inner, 'transform', 'translate(' + ox.toFixed(2) + ' ' + oy.toFixed(2) + ') rotate(' + (P.lean || 0).toFixed(2) + ')');
     for (var i = 0; i < st.parts.length; i++) {
       var q2 = st.parts[i];
-      if (q2.body) q2.el.setAttribute('transform', 'translate(0 ' + (P.bodyY || 0).toFixed(2) + ')');
-      else if (P[q2.key] !== undefined) q2.el.setAttribute('transform', 'rotate(' + P[q2.key].toFixed(2) + q2.pv + ')');
+      if (q2.body) setA(q2.el, 'transform', 'translate(0 ' + (P.bodyY || 0).toFixed(2) + ')');
+      else if (P[q2.key] !== undefined) setA(q2.el, 'transform', 'rotate(' + P[q2.key].toFixed(2) + q2.pv + ')');
     }
     trailGap(s, p[0], p[1], (ep > 0.5 && C.poleDir < 0 ? Math.max(cfg.gap, 26) : cfg.gap) * k);
     if (C.trail !== s) {
